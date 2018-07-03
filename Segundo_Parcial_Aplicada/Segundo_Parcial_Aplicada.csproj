@@ -52,10 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ArticulosBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\MantenimientoBLL.cs" />
     <Compile Include="BLL\Repositorio.cs" />
     <Compile Include="BLL\VehiculoBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Articulos.cs" />
     <Compile Include="Entidades\Mantenimiento.cs" />
     <Compile Include="Entidades\Mantenimiento_Detalle.cs" />
     <Compile Include="Entidades\Vehiculos.cs" />
@@ -65,11 +68,35 @@
     <Compile Include="IU\Consultas\Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="IU\Registro\Registro.cs">
+    <Compile Include="IU\Registro\Registro_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IU\Registro\Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="IU\Registro\Registro_Articulos.Designer.cs">
+      <DependentUpon>Registro_Articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Entrada_Articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Entrada_Articulos.Designer.cs">
+      <DependentUpon>Registro_Entrada_Articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Mantenimiento.Designer.cs">
+      <DependentUpon>Registro_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Talleres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Talleres.Designer.cs">
+      <DependentUpon>Registro_Talleres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\Registro\Registro_Vehiculos.Designer.cs">
+      <DependentUpon>Registro_Vehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -82,8 +109,20 @@
     <EmbeddedResource Include="IU\Consultas\Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IU\Registro\Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="IU\Registro\Registro_Articulos.resx">
+      <DependentUpon>Registro_Articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\Registro\Registro_Entrada_Articulos.resx">
+      <DependentUpon>Registro_Entrada_Articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\Registro\Registro_Mantenimiento.resx">
+      <DependentUpon>Registro_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\Registro\Registro_Talleres.resx">
+      <DependentUpon>Registro_Talleres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\Registro\Registro_Vehiculos.resx">
+      <DependentUpon>Registro_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

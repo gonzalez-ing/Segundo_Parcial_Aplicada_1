@@ -26,12 +26,32 @@ namespace Segundo_Parcial_Aplicada
 
         private void articuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Registro().Show();
+            new Registro_Mantenimiento().Show();
         }
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Consulta().Show();
+        }
+
+        private void registroArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Registro_Articulos().Show();
+        }
+
+        private void registroTalleresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Registro_Talleres().Show();
+        }
+
+        private void registroVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Registro_Vehiculos().Show();
+        }
+
+        private void registroEntradaArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Registro_Entrada_Articulos().Show();
         }
     }
 }
