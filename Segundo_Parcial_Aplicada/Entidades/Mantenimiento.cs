@@ -10,7 +10,9 @@ namespace Segundo_Parcial_Aplicada.Entidades
     public class Mantenimiento
     {
         [Key]
-        public int VehiculoId { get; set; }
-        public string Descripcion { get; set; }
+        public int MantenimientoId { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Comentario { get; set; }
+        public float Precio { get; set; }
     }
 }

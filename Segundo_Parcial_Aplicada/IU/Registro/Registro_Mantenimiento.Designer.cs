@@ -161,6 +161,39 @@
             label6.TabIndex = 133;
             label6.Text = "Proximo \r\nMantenimiento";
             // 
+            // label9
+            // 
+            label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(26, 173);
+            label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(33, 13);
+            label9.TabIndex = 135;
+            label9.Text = "Taller";
+            // 
+            // label10
+            // 
+            label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(313, 427);
+            label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(56, 13);
+            label10.TabIndex = 138;
+            label10.Text = "Sub. Total";
+            // 
+            // label11
+            // 
+            label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(320, 453);
+            label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(49, 13);
+            label11.TabIndex = 140;
+            label11.Text = "Itbis 18%";
+            // 
             // IdnumericUpDown
             // 
             this.IdnumericUpDown.Location = new System.Drawing.Point(122, 65);
@@ -265,17 +298,6 @@
             this.TallercomboBox.Size = new System.Drawing.Size(421, 21);
             this.TallercomboBox.TabIndex = 136;
             // 
-            // label9
-            // 
-            label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(26, 173);
-            label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(33, 13);
-            label9.TabIndex = 135;
-            label9.Text = "Taller";
-            // 
             // TotaltextBox
             // 
             this.TotaltextBox.Location = new System.Drawing.Point(374, 476);
@@ -290,34 +312,12 @@
             this.SubtotaltextBox.Size = new System.Drawing.Size(117, 20);
             this.SubtotaltextBox.TabIndex = 139;
             // 
-            // label10
-            // 
-            label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(313, 427);
-            label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(56, 13);
-            label10.TabIndex = 138;
-            label10.Text = "Sub. Total";
-            // 
             // ItbistextBox
             // 
             this.ItbistextBox.Location = new System.Drawing.Point(374, 450);
             this.ItbistextBox.Name = "ItbistextBox";
             this.ItbistextBox.Size = new System.Drawing.Size(117, 20);
             this.ItbistextBox.TabIndex = 141;
-            // 
-            // label11
-            // 
-            label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(320, 453);
-            label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(49, 13);
-            label11.TabIndex = 140;
-            label11.Text = "Itbis 18%";
             // 
             // Agregarbutton
             // 
@@ -359,6 +359,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 28;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
