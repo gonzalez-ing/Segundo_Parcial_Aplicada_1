@@ -51,15 +51,15 @@
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TallercomboBox = new System.Windows.Forms.ComboBox();
-            this.TotaltextBox = new System.Windows.Forms.TextBox();
-            this.SubtotaltextBox = new System.Windows.Forms.TextBox();
-            this.ItbistextBox = new System.Windows.Forms.TextBox();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.SubTotalnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ItbisnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.TotalnumericUpDown = new System.Windows.Forms.NumericUpDown();
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -73,6 +73,9 @@
             label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -203,7 +206,7 @@
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(278, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(116, 20);
             this.IdnumericUpDown.TabIndex = 32;
             // 
             // label1
@@ -298,27 +301,6 @@
             this.TallercomboBox.Size = new System.Drawing.Size(421, 21);
             this.TallercomboBox.TabIndex = 136;
             // 
-            // TotaltextBox
-            // 
-            this.TotaltextBox.Location = new System.Drawing.Point(374, 476);
-            this.TotaltextBox.Name = "TotaltextBox";
-            this.TotaltextBox.Size = new System.Drawing.Size(117, 20);
-            this.TotaltextBox.TabIndex = 137;
-            // 
-            // SubtotaltextBox
-            // 
-            this.SubtotaltextBox.Location = new System.Drawing.Point(374, 424);
-            this.SubtotaltextBox.Name = "SubtotaltextBox";
-            this.SubtotaltextBox.Size = new System.Drawing.Size(117, 20);
-            this.SubtotaltextBox.TabIndex = 139;
-            // 
-            // ItbistextBox
-            // 
-            this.ItbistextBox.Location = new System.Drawing.Point(374, 450);
-            this.ItbistextBox.Name = "ItbistextBox";
-            this.ItbistextBox.Size = new System.Drawing.Size(117, 20);
-            this.ItbistextBox.TabIndex = 141;
-            // 
             // Agregarbutton
             // 
             this.Agregarbutton.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -334,7 +316,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(418, 54);
+            this.Buscarbutton.Location = new System.Drawing.Point(248, 54);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(73, 39);
             this.Buscarbutton.TabIndex = 30;
@@ -383,18 +365,39 @@
             this.label12.Text = "Registro De Mantenimiento";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // SubTotalnumericUpDown
+            // 
+            this.SubTotalnumericUpDown.Location = new System.Drawing.Point(374, 427);
+            this.SubTotalnumericUpDown.Name = "SubTotalnumericUpDown";
+            this.SubTotalnumericUpDown.Size = new System.Drawing.Size(117, 20);
+            this.SubTotalnumericUpDown.TabIndex = 143;
+            // 
+            // ItbisnumericUpDown
+            // 
+            this.ItbisnumericUpDown.Location = new System.Drawing.Point(374, 453);
+            this.ItbisnumericUpDown.Name = "ItbisnumericUpDown";
+            this.ItbisnumericUpDown.Size = new System.Drawing.Size(117, 20);
+            this.ItbisnumericUpDown.TabIndex = 144;
+            // 
+            // TotalnumericUpDown
+            // 
+            this.TotalnumericUpDown.Location = new System.Drawing.Point(374, 481);
+            this.TotalnumericUpDown.Name = "TotalnumericUpDown";
+            this.TotalnumericUpDown.Size = new System.Drawing.Size(117, 20);
+            this.TotalnumericUpDown.TabIndex = 145;
+            // 
             // Registro_Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(527, 513);
+            this.Controls.Add(this.TotalnumericUpDown);
+            this.Controls.Add(this.ItbisnumericUpDown);
+            this.Controls.Add(this.SubTotalnumericUpDown);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.ItbistextBox);
             this.Controls.Add(label11);
-            this.Controls.Add(this.SubtotaltextBox);
             this.Controls.Add(label10);
-            this.Controls.Add(this.TotaltextBox);
             this.Controls.Add(this.TallercomboBox);
             this.Controls.Add(label9);
             this.Controls.Add(label6);
@@ -425,6 +428,9 @@
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,9 +454,9 @@
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker1;
         private System.Windows.Forms.ComboBox TallercomboBox;
-        private System.Windows.Forms.TextBox TotaltextBox;
-        private System.Windows.Forms.TextBox SubtotaltextBox;
-        private System.Windows.Forms.TextBox ItbistextBox;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown SubTotalnumericUpDown;
+        private System.Windows.Forms.NumericUpDown ItbisnumericUpDown;
+        private System.Windows.Forms.NumericUpDown TotalnumericUpDown;
     }
 }

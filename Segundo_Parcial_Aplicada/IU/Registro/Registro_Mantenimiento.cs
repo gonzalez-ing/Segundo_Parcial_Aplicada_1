@@ -33,7 +33,36 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             VehiculocomboBox.DisplayMember = "Descripcion";
         }
 
-       
+        private Mantenimiento LlenaClase()
+        {
+            Mantenimiento mantenimiento = new Mantenimiento();
+
+            mantenimiento.MantenimientoId = Convert.ToInt32(IdnumericUpDown.Value);
+            mantenimiento.Fecha = fechaDateTimePicker.Value;
+
+            foreach (DataGridViewRow item in DetalledataGridView.Rows)
+            {
+                mantenimiento.AgregarDetalle(
+                    ToInt(item.Cells["id"].Value),
+                    ToInt(item.Cells["MantenimientoId"].Value),
+                    ToInt(item.Cells["VehiculoId"].Value),
+                    item.Cells["Articulo"].ToString(),
+                    ToInt(item.Cells["Cantidad"].Value),
+                    ToInt(item.Cells["Precio"].Value)
+                  );
+            }
+            return mantenimiento;
+        }
+
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
 

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Vehiculos));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Vehiculos));
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -38,12 +39,36 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.NombretextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
+            this.MantenimientotextBox = new System.Windows.Forms.TextBox();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(8, 104);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(63, 13);
+            label2.TabIndex = 128;
+            label2.Text = "Descripcion";
+            // 
+            // label3
+            // 
+            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(8, 146);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(76, 26);
+            label3.TabIndex = 130;
+            label3.Text = "       Total\r\nMantenimiento";
             // 
             // IdnumericUpDown
             // 
@@ -75,6 +100,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(64, 37);
             this.Buscarbutton.TabIndex = 39;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -85,6 +111,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(71, 49);
             this.Eliminarbutton.TabIndex = 38;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -95,6 +122,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 37;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -105,6 +133,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(74, 49);
             this.Nuevobutton.TabIndex = 36;
             this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // label6
             // 
@@ -118,42 +147,24 @@
             this.label6.Text = "Registro De Vehiculos";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // DescripciontextBox
             // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(8, 104);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 13);
-            label2.TabIndex = 128;
-            label2.Text = "Descripcion";
+            this.DescripciontextBox.Location = new System.Drawing.Point(73, 101);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(206, 20);
+            this.DescripciontextBox.TabIndex = 127;
             // 
-            // NombretextBox
+            // MantenimientotextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(73, 101);
-            this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(206, 20);
-            this.NombretextBox.TabIndex = 127;
+            this.MantenimientotextBox.Location = new System.Drawing.Point(89, 152);
+            this.MantenimientotextBox.Name = "MantenimientotextBox";
+            this.MantenimientotextBox.ReadOnly = true;
+            this.MantenimientotextBox.Size = new System.Drawing.Size(190, 20);
+            this.MantenimientotextBox.TabIndex = 129;
             // 
-            // label3
+            // MyerrorProvider
             // 
-            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(8, 146);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(76, 26);
-            label3.TabIndex = 130;
-            label3.Text = "       Total\r\nMantenimiento";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 129;
+            this.MyerrorProvider.ContainerControl = this;
             // 
             // Registro_Vehiculos
             // 
@@ -162,9 +173,9 @@
             this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(302, 268);
             this.Controls.Add(label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.MantenimientotextBox);
             this.Controls.Add(label2);
-            this.Controls.Add(this.NombretextBox);
+            this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.IdnumericUpDown);
             this.Controls.Add(this.label1);
@@ -175,6 +186,7 @@
             this.Name = "Registro_Vehiculos";
             this.Text = "Registro_Vehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +201,8 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox NombretextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DescripciontextBox;
+        private System.Windows.Forms.TextBox MantenimientotextBox;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }

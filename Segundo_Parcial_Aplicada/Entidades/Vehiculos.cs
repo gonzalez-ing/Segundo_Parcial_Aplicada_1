@@ -21,7 +21,10 @@ namespace Segundo_Parcial_Aplicada.Entidades
             Mantenimiento = 0;
         }
 
-
+        public override string ToString()
+        {
+            return this.Descripcion;
+        }
 
     }
 }

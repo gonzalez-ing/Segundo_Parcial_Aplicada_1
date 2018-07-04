@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-    public class ArticulosBLL
+    public class Entrada_ArticuloBLL
     {
-        public static bool Guardar(Articulos articulos)
+        public static bool Guardar(Entrada_Articulo entrada)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Articulo.Add(articulos) != null)
+                if (contexto.Entrada.Add(entrada) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -33,79 +33,109 @@ namespace Segundo_Parcial_Aplicada.BLL
             return paso;
         }
 
-
-        public static bool Modificar(Articulos articulos)
+        public static bool Modificar(Entrada_Articulo entrada)
         {
+
             bool paso = false;
+
             Contexto contexto = new Contexto();
+
             try
             {
-                contexto.Entry(articulos).State = EntityState.Modified;
+                contexto.Entry(entrada).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
+
                 }
+
                 contexto.Dispose();
+
             }
+
             catch (Exception)
             {
+
                 throw;
+
             }
+
             return paso;
         }
-
 
         public static bool Eliminar(int id)
         {
+
             bool paso = false;
 
             Contexto contexto = new Contexto();
+
             try
             {
-                Articulos articulos = contexto.Articulo.Find(id);
 
-                contexto.Articulo.Remove(articulos);
-
+                Entrada_Articulo entrada = contexto.Entrada.Find(id);
+                contexto.Entrada.Remove(entrada);
                 if (contexto.SaveChanges() > 0)
                 {
+
                     paso = true;
+
+                }
+
+                contexto.Dispose();
+
+            }
+
+            catch (Exception)
+            {
+
+                throw;
+
+            }
+
+            return paso;
+
+        }
+
+        public static Entrada_Articulo Buscar(int id)
+        {
+
+            Entrada_Articulo entrada = new Entrada_Articulo();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                entrada = contexto.Entrada.Find(id);
+                entrada.Detalle.Count();
+
+                foreach (var item in entrada.Detalle)
+                {
+                    string s = item.Articulo.Descripcion;
                 }
                 contexto.Dispose();
             }
+
             catch (Exception)
             {
 
                 throw;
+
             }
-            return paso;
+
+            return entrada;
+
         }
 
-
-        public static Articulos Buscar(int id)
+        public static List<Entrada_Articulo> GetList(Expression<Func<Entrada_Articulo, bool>> expression)
         {
+
+            List<Entrada_Articulo> Entrada = new List<Entrada_Articulo>();
             Contexto contexto = new Contexto();
-            Articulos articulos = new Articulos();
+
             try
             {
-                articulos = contexto.Articulo.Find(id);
-                contexto.Dispose();
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-            return articulos;
-        }
-
-
-        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
-        {
-            List<Articulos> Articulos = new List<Articulos>();
-            Contexto contexto = new Contexto();
-            try
-            {
-                Articulos = contexto.Articulo.Where(expression).ToList();
+                Entrada = contexto.Entrada.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -114,22 +144,7 @@ namespace Segundo_Parcial_Aplicada.BLL
                 throw;
             }
 
-            return Articulos;
-        }
-
-        public static decimal PorcientoGanancia(decimal precio, decimal costo)
-        {
-            return (precio - costo) / costo * 100;
-        }
-
-        public static decimal Precio(decimal costo, decimal ganancia)
-        {
-            return (costo * ganancia) / 100 + costo;
-        }
-
-        public static decimal Costo(decimal precio, decimal ganancia)
-        {
-            return precio / ((100 + ganancia) / 100);
+            return Entrada;
         }
     }
 }

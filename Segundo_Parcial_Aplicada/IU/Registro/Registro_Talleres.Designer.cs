@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Talleres));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Talleres));
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -38,9 +39,22 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(14, 115);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(44, 13);
+            label2.TabIndex = 126;
+            label2.Text = "Nombre";
             // 
             // IdnumericUpDown
             // 
@@ -72,6 +86,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(69, 36);
             this.Buscarbutton.TabIndex = 39;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -82,6 +97,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(71, 49);
             this.Eliminarbutton.TabIndex = 38;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -92,6 +108,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 37;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -102,17 +119,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(74, 49);
             this.Nuevobutton.TabIndex = 36;
             this.Nuevobutton.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(14, 115);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(44, 13);
-            label2.TabIndex = 126;
-            label2.Text = "Nombre";
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // NombretextBox
             // 
@@ -133,6 +140,10 @@
             this.label6.Text = "Registro De Talleres";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
             // Registro_Talleres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,7 +161,9 @@
             this.Controls.Add(this.Nuevobutton);
             this.Name = "Registro_Talleres";
             this.Text = "Registro_Talleres";
+            this.Load += new System.EventHandler(this.Registro_Talleres_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +179,6 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
     }
 }

@@ -14,11 +14,17 @@ namespace Segundo_Parcial_Aplicada.DAL
         public DbSet<Vehiculos> Vehiculo { get; set; }
         public DbSet<Mantenimiento> mantenimiento { get; set; }
         public DbSet<Articulos> Articulo { get; set; }
+        public DbSet<Entrada_Articulo> Entrada { get; set; }
+        public DbSet<Talleres> Tallere { get; set; }
 
         public Contexto() : base("ConStr")
         {
   
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
