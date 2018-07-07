@@ -185,6 +185,7 @@
             this.Controls.Add(this.Nuevobutton);
             this.Name = "Registro_Vehiculos";
             this.Text = "Registro_Vehiculos";
+            this.Load += new System.EventHandler(this.Registro_Vehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);

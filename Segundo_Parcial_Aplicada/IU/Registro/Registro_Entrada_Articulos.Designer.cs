@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Entrada_Articulos));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Entrada_Articulos));
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -41,12 +42,47 @@
             this.label6 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
-            this.CantidadtextBox = new System.Windows.Forms.TextBox();
+            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             fechaLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(12, 91);
+            fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(37, 13);
+            fechaLabel.TabIndex = 119;
+            fechaLabel.Text = "Fecha";
+            // 
+            // label3
+            // 
+            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 127);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(42, 13);
+            label3.TabIndex = 124;
+            label3.Text = "Articulo";
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 169);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(49, 13);
+            label2.TabIndex = 127;
+            label2.Text = "Cantidad";
             // 
             // IdnumericUpDown
             // 
@@ -78,6 +114,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(59, 36);
             this.Buscarbutton.TabIndex = 33;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -88,6 +125,7 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(71, 44);
             this.Eliminarbutton.TabIndex = 32;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -98,6 +136,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(75, 44);
             this.Guardarbutton.TabIndex = 31;
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -108,6 +147,7 @@
             this.Nuevobutton.Size = new System.Drawing.Size(74, 44);
             this.Nuevobutton.TabIndex = 30;
             this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // label6
             // 
@@ -120,16 +160,6 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "Registro De Entradas De Articulos";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // fechaLabel
-            // 
-            fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(12, 91);
-            fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(37, 13);
-            fechaLabel.TabIndex = 119;
-            fechaLabel.Text = "Fecha";
             // 
             // fechaDateTimePicker
             // 
@@ -149,34 +179,16 @@
             this.ArticulocomboBox.Size = new System.Drawing.Size(220, 21);
             this.ArticulocomboBox.TabIndex = 125;
             // 
-            // label3
+            // CantidadnumericUpDown
             // 
-            label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 127);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(42, 13);
-            label3.TabIndex = 124;
-            label3.Text = "Articulo";
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(76, 167);
+            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(220, 20);
+            this.CantidadnumericUpDown.TabIndex = 128;
             // 
-            // label2
+            // MyErrorProvider
             // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(12, 169);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(49, 13);
-            label2.TabIndex = 127;
-            label2.Text = "Cantidad";
-            // 
-            // CantidadtextBox
-            // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(76, 166);
-            this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(220, 20);
-            this.CantidadtextBox.TabIndex = 126;
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // Registro_Entrada_Articulos
             // 
@@ -184,8 +196,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(322, 273);
+            this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(label2);
-            this.Controls.Add(this.CantidadtextBox);
             this.Controls.Add(this.ArticulocomboBox);
             this.Controls.Add(label3);
             this.Controls.Add(fechaLabel);
@@ -199,7 +211,10 @@
             this.Controls.Add(this.Nuevobutton);
             this.Name = "Registro_Entrada_Articulos";
             this.Text = "Registro_Entrada_Articulos";
+            this.Load += new System.EventHandler(this.Registro_Entrada_Articulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +231,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
-        private System.Windows.Forms.TextBox CantidadtextBox;
+        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

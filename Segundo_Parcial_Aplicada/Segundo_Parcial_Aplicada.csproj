@@ -61,17 +61,12 @@
     <Compile Include="BLL\VehiculoBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulos.cs" />
+    <Compile Include="Entidades\Entradas_Detalle.cs" />
     <Compile Include="Entidades\Entrada_Articulo.cs" />
     <Compile Include="Entidades\Mantenimiento.cs" />
     <Compile Include="Entidades\Mantenimiento_Detalle.cs" />
     <Compile Include="Entidades\Talleres.cs" />
     <Compile Include="Entidades\Vehiculos.cs" />
-    <Compile Include="IU\Consultas\Consulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IU\Consultas\Consulta.Designer.cs">
-      <DependentUpon>Consulta.cs</DependentUpon>
-    </Compile>
     <Compile Include="IU\Registro\Registro_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +105,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="IU\Consultas\Consulta.resx">
-      <DependentUpon>Consulta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="IU\Registro\Registro_Articulos.resx">
       <DependentUpon>Registro_Articulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,13 +147,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="IU\Consultas\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Printer-32x32.png" />
     <None Include="Resources\Search-32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Script\SegundoParcialDb.sql" />
+    <Content Include="DAL\Script\Segundo_ParcialDb.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

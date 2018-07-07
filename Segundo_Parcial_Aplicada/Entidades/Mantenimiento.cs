@@ -22,9 +22,9 @@ namespace Segundo_Parcial_Aplicada.Entidades
             this.Detalle = new List<Mantenimiento_Detalle>();
         }
 
-        public void AgregarDetalle(int id, int MantenimientoId, int VehiculoId, string Articulo, int Cantidad, int Precio)
+        public void AgregarDetalle(int id, int MantenimientoId, int VehiculoId, string Articulo, int Cantidad, int Precio, int importe, int Subtotal, int itbis, int total)
         {
-            this.Detalle.Add(new Mantenimiento_Detalle(id, MantenimientoId, VehiculoId, Articulo, Cantidad, Precio));
+            this.Detalle.Add(new Mantenimiento_Detalle(id, MantenimientoId, VehiculoId, Articulo, Cantidad, Precio, importe, Subtotal, itbis, total));
         }
 
     }

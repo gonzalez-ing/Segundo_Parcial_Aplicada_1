@@ -116,5 +116,10 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             else
                 MessageBox.Show("No Se Puede Eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void Registro_Vehiculos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

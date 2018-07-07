@@ -6,7 +6,6 @@ C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\bin\Debug\EntityFramework.xml
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\obj\Debug\Segundo_Parcial_Aplicada.csprojResolveAssemblyReference.cache
-C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\obj\Debug\Segundo_Parcial_Aplicada.IU.Consultas.Consulta.resources
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\obj\Debug\Segundo_Parcial_Aplicada.IU.Registro.Registro_Articulos.resources
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\obj\Debug\Segundo_Parcial_Aplicada.IU.Registro.Registro_Entrada_Articulos.resources
 C:\Users\adrianesteban\Desktop\Segundo_Parcial_Aplicada\Segundo_Parcial_Aplicada\obj\Debug\Segundo_Parcial_Aplicada.IU.Registro.Registro_Mantenimiento.resources

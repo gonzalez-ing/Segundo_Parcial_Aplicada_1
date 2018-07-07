@@ -43,11 +43,11 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
-            this.InventariotextBox = new System.Windows.Forms.TextBox();
             this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.GanancianumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.InventariotextBox = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -199,14 +199,6 @@
             this.DescripciontextBox.Size = new System.Drawing.Size(220, 20);
             this.DescripciontextBox.TabIndex = 129;
             // 
-            // InventariotextBox
-            // 
-            this.InventariotextBox.Location = new System.Drawing.Point(225, 185);
-            this.InventariotextBox.Name = "InventariotextBox";
-            this.InventariotextBox.ReadOnly = true;
-            this.InventariotextBox.Size = new System.Drawing.Size(71, 20);
-            this.InventariotextBox.TabIndex = 138;
-            // 
             // CostonumericUpDown
             // 
             this.CostonumericUpDown.DecimalPlaces = 2;
@@ -254,6 +246,14 @@
             // 
             this.MyerrorProvider.ContainerControl = this;
             // 
+            // InventariotextBox
+            // 
+            this.InventariotextBox.Location = new System.Drawing.Point(225, 185);
+            this.InventariotextBox.Name = "InventariotextBox";
+            this.InventariotextBox.ReadOnly = true;
+            this.InventariotextBox.Size = new System.Drawing.Size(71, 20);
+            this.InventariotextBox.TabIndex = 138;
+            // 
             // Registro_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,10 +300,10 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox DescripciontextBox;
-        private System.Windows.Forms.TextBox InventariotextBox;
         private System.Windows.Forms.NumericUpDown CostonumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
         private System.Windows.Forms.NumericUpDown GanancianumericUpDown;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.TextBox InventariotextBox;
     }
 }

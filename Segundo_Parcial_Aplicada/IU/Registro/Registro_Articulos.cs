@@ -1,4 +1,5 @@
 ﻿using Segundo_Parcial_Aplicada.BLL;
+using Segundo_Parcial_Aplicada.DAL;
 using Segundo_Parcial_Aplicada.Entidades;
 using System;
 using System.Collections.Generic;
@@ -81,7 +82,8 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Articulos articulo = BLL.ArticulosBLL.Buscar(id);
+            Repositorio<Articulos> repositorio = new Repositorio<Articulos>(new Contexto());
+            Articulos articulo = repositorio.Buscar(id);
 
             if (articulo != null)
             {
@@ -109,6 +111,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            Repositorio<Articulos> repositorio = new Repositorio<Articulos>(new Contexto());
             bool paso = false;
             if (Validar(2))
             {
@@ -142,6 +145,8 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
+            Repositorio<Articulos> repositorio = new Repositorio<Articulos>(new Contexto());
+            Articulos articulo = repositorio.Buscar(id);
 
             if (BLL.ArticulosBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -149,24 +154,25 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
                 MessageBox.Show("No Se Puede Eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
-        // Calculos De Ganancia
+        // Calcular Ganancia
         private void GanancianumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToDecimal(GanancianumericUpDown.Value) != 0)
             {
                 if (Convert.ToDecimal(CostonumericUpDown.Value) != 0)
                 {
-                    PrecionumericUpDown.Value = ArticulosBLL.Precio(Convert.ToDecimal
-                        (CostonumericUpDown.Value), Convert.ToDecimal(GanancianumericUpDown.Value));
+                    PrecionumericUpDown.Value = ArticulosBLL.Precio(Convert.ToDecimal(CostonumericUpDown.Value), 
+                        Convert.ToDecimal(GanancianumericUpDown.Value));
                 }
             }
 
+            // Calcular COSTO
             if (Convert.ToDecimal(GanancianumericUpDown.Value) != 0)
             {
                 if (Convert.ToDecimal(PrecionumericUpDown.Value) != 0)
                 {
-                    CostonumericUpDown.Value = ArticulosBLL.Costo(Convert.ToDecimal
-                        (PrecionumericUpDown.Value), Convert.ToDecimal(GanancianumericUpDown.Value));
+                    CostonumericUpDown.Value = ArticulosBLL.Costo(Convert.ToDecimal(PrecionumericUpDown.Value), 
+                        Convert.ToDecimal(GanancianumericUpDown.Value));
                 }
             }
         }

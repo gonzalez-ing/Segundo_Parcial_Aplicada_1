@@ -1,5 +1,4 @@
-﻿using Segundo_Parcial_Aplicada.IU.Consultas;
-using Segundo_Parcial_Aplicada.IU.Registro;
+﻿using Segundo_Parcial_Aplicada.IU.Registro;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +26,6 @@ namespace Segundo_Parcial_Aplicada
         private void articuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new Registro_Mantenimiento().Show();
-        }
-
-        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Consulta().Show();
         }
 
         private void registroArticulosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using Segundo_Parcial_Aplicada.Entidades;
+﻿using Segundo_Parcial_Aplicada.BLL;
+using Segundo_Parcial_Aplicada.DAL;
+using Segundo_Parcial_Aplicada.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +60,8 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
             Talleres talleres = BLL.TalleresBLL.Buscar(id);
+            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
+            Talleres taller = repositorio.Buscar(id);
 
             if (talleres != null)
             {
@@ -76,6 +80,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
             bool paso = false;
             if (Validar(2))
             {
@@ -109,6 +114,8 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
+            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
+            Talleres taller = repositorio.Buscar(id);
 
             if (BLL.TalleresBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);

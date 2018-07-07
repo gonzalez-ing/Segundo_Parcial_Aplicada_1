@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-    public class Entrada_ArticuloBLL
+    public class EntradaArticuloBLL
     {
         public static bool Guardar(Entrada_Articulo entrada)
         {
@@ -106,13 +106,8 @@ namespace Segundo_Parcial_Aplicada.BLL
             try
             {
                 entrada = contexto.Entrada.Find(id);
-                entrada.Detalle.Count();
-
-                foreach (var item in entrada.Detalle)
-                {
-                    string s = item.Articulo.Descripcion;
-                }
                 contexto.Dispose();
+
             }
 
             catch (Exception)
