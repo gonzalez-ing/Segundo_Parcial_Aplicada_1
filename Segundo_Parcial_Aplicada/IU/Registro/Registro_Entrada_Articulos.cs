@@ -18,119 +18,125 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
         public Registro_Entrada_Articulos()
         {
             InitializeComponent();
-            LLenaComboBox();
+            LlenarComboBox();
         }
 
-        private void LLenaComboBox()
+        private Entrada_Articulo LlenarClase()
+        {
+
+            Entrada_Articulo entrada = new Entrada_Articulo();
+
+            entrada.EntradaId = Convert.ToInt32(IdnumericUpDown.Value);
+            entrada.ArticuloId = (int)ArticulocomboBox.SelectedValue;
+            entrada.Fecha = fechaDateTimePicker.Text;
+            entrada.Cantidad = Convert.ToInt32(CantidadTextBox.Text);
+
+            return entrada;
+        }
+
+        private Entrada_Articulo Limpiar()
+        {
+            Entrada_Articulo entrada = new Entrada_Articulo();
+            IdnumericUpDown.Value = 0;
+            CantidadTextBox.Clear();
+
+            return entrada;
+        }
+
+        private void LlenarComboBox()
         {
             Repositorio<Articulos> repositorio = new Repositorio<Articulos>(new Contexto());
-            ArticulocomboBox.DataSource = repositorio.GetList(a => true);
+            ArticulocomboBox.DataSource = repositorio.GetList(c => true);
             ArticulocomboBox.ValueMember = "ArticuloId";
             ArticulocomboBox.DisplayMember = "Descripcion";
         }
 
-        private Entrada_Articulo LLenaClase()
-        {
-            Entrada_Articulo articulo = new Entrada_Articulo();
-            articulo.EntradaId = Convert.ToInt32(IdnumericUpDown.Value);
-            articulo.Fecha =fechaDateTimePicker.Value.Date;
-            articulo.Articulo = ArticulocomboBox.Text;
-            articulo.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
-            return articulo;
-        }
-
-        private void Registro_Entrada_Articulos_Load(object sender, EventArgs e)
+        private bool Validar(int validar)
         {
 
+            bool paso = false;
+
+            if (validar == 1 && IdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(IdnumericUpDown, "Debe Ingresar un ID");
+                paso = true;
+
+            }
+            return paso;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            IdnumericUpDown.Value = 0;
-            fechaDateTimePicker.ResetText();
-            CantidadnumericUpDown.Value = 0;
+            Limpiar();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Repositorio<Entrada_Articulo> repositorio = new Repositorio<Entrada_Articulo>(new Contexto());
-            Entrada_Articulo articulo = repositorio.Buscar(id);
+            MyErrorProvider.Clear();
 
-            if (articulo != null)
+            if (Validar(1))
             {
-                fechaDateTimePicker.Value = articulo.Fecha;
-                ArticulocomboBox.Text = articulo.Articulo;
-                CantidadnumericUpDown.Value = articulo.Cantidad;
+                MessageBox.Show("Debe Ingresar un ID");
+                return;
+            }
 
+            int id = Convert.ToInt32(IdnumericUpDown.Value);
+            Entrada_Articulo entrada = BLL.EntradaArticuloBLL.Buscar(id);
+
+            if (entrada != null)
+            {
+
+                fechaDateTimePicker.Text = entrada.Fecha;
+                ArticulocomboBox.SelectedValue = entrada.ArticuloId;
+                CantidadTextBox.Text = entrada.Cantidad.ToString();
             }
             else
-                MessageBox.Show("No Se Puede Encontrar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se puede encontrar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Repositorio<Entrada_Articulo> repositorio = new Repositorio<Entrada_Articulo>(new Contexto());
-            Entrada_Articulo articulo;
-
-            if (Validar())
+            if (Validar(2))
             {
-                MessageBox.Show("Debe Llenar Todos Los Campos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Debe Llenar todos los campos");
                 return;
             }
 
-            articulo = LLenaClase();
+            MyErrorProvider.Clear();
+
 
             if (IdnumericUpDown.Value == 0)
-                paso = repositorio.Guardar(articulo);
+                paso = BLL.EntradaArticuloBLL.Guardar(LlenarClase());
             else
-                paso = repositorio.Modificar(articulo);
-
+                paso = BLL.EntradaArticuloBLL.Modificar(LlenarClase());
 
 
             if (paso)
-            {
-                MessageBox.Show("Guardado ", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Inventario();
-            }
+
+                MessageBox.Show("Guardado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No Se Puede Guardar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo guardar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Limpiar();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            MyErrorProvider.Clear();
+
+            if (Validar(1))
+            {
+                MessageBox.Show("Debe Ingresar un ID");
+                return;
+            }
+
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Repositorio<Entrada_Articulo> repositorio = new Repositorio<Entrada_Articulo>(new Contexto());
-            Entrada_Articulo articulo = repositorio.Buscar(id);
 
-            if (articulo != null)
-            {
-                repositorio.Eliminar(id);
+            if (BLL.EntradaArticuloBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
             else
-                MessageBox.Show("No Se Puede Eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private void Inventario()
-        {
-            Repositorio<Articulos> repositorio = new Repositorio<Articulos>(new Contexto());
-            Articulos articulo = (Articulos)ArticulocomboBox.SelectedItem;
-            articulo.Inventario = (int)CantidadnumericUpDown.Value;
-            repositorio.Modificar(articulo);
-        }
-
-        private bool Validar()
-        {
-            bool Validar = false;
-
-            if (CantidadnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(CantidadnumericUpDown, "Ingrese Cantidad De Entradas");
-                Validar = true;
-            }
-            return Validar;
+                MessageBox.Show("No se puede eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

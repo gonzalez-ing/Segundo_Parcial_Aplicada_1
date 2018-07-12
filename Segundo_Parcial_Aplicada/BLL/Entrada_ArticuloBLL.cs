@@ -20,7 +20,12 @@ namespace Segundo_Parcial_Aplicada.BLL
             {
                 if (contexto.Entrada.Add(entrada) != null)
                 {
+                    Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
+                    articulo.Inventario += entrada.Cantidad;
+                    BLL.ArticuloBLL.Modificar(articulo);
+
                     contexto.SaveChanges();
+
                     paso = true;
                 }
 
@@ -39,10 +44,20 @@ namespace Segundo_Parcial_Aplicada.BLL
             bool paso = false;
 
             Contexto contexto = new Contexto();
+            Entrada_Articulo EntradaAnterior = BLL.EntradaArticuloBLL.Buscar(entrada.EntradaId);
+
+            int diferencia;
+
+            diferencia = entrada.Cantidad - EntradaAnterior.Cantidad;
+
+            Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
+            articulo.Inventario += diferencia;
+            BLL.ArticuloBLL.Modificar(articulo);
 
             try
             {
                 contexto.Entry(entrada).State = EntityState.Modified;
+
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -61,7 +76,11 @@ namespace Segundo_Parcial_Aplicada.BLL
             }
 
             return paso;
+
+
+
         }
+
 
         public static bool Eliminar(int id)
         {
@@ -74,6 +93,11 @@ namespace Segundo_Parcial_Aplicada.BLL
             {
 
                 Entrada_Articulo entrada = contexto.Entrada.Find(id);
+
+                Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
+                articulo.Inventario -= entrada.Cantidad;
+                BLL.ArticuloBLL.Modificar(articulo);
+
                 contexto.Entrada.Remove(entrada);
                 if (contexto.SaveChanges() > 0)
                 {
@@ -96,6 +120,7 @@ namespace Segundo_Parcial_Aplicada.BLL
             return paso;
 
         }
+
 
         public static Entrada_Articulo Buscar(int id)
         {
@@ -121,16 +146,17 @@ namespace Segundo_Parcial_Aplicada.BLL
 
         }
 
+
         public static List<Entrada_Articulo> GetList(Expression<Func<Entrada_Articulo, bool>> expression)
         {
 
-            List<Entrada_Articulo> Entrada = new List<Entrada_Articulo>();
+            List<Entrada_Articulo> entrada = new List<Entrada_Articulo>();
             Contexto contexto = new Contexto();
 
             try
             {
 
-                Entrada = contexto.Entrada.Where(expression).ToList();
+                entrada = contexto.Entrada.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -139,7 +165,7 @@ namespace Segundo_Parcial_Aplicada.BLL
                 throw;
             }
 
-            return Entrada;
+            return entrada;
         }
     }
 }

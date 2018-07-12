@@ -61,7 +61,6 @@
     <Compile Include="BLL\VehiculoBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulos.cs" />
-    <Compile Include="Entidades\Entradas_Detalle.cs" />
     <Compile Include="Entidades\Entrada_Articulo.cs" />
     <Compile Include="Entidades\Mantenimiento.cs" />
     <Compile Include="Entidades\Mantenimiento_Detalle.cs" />
@@ -155,7 +154,7 @@
     <None Include="Resources\Search-32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Script\Segundo_ParcialDb.sql" />
+    <Content Include="DAL\Script\SegundoParcialDb.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

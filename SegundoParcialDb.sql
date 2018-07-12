@@ -1,0 +1,4 @@
+CREATE DATABASE SegundoParcialDb
+go
+use SegundoParcialDb
+go

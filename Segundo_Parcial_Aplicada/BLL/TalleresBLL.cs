@@ -12,14 +12,15 @@ namespace Segundo_Parcial_Aplicada.BLL
 {
     public class TalleresBLL
     {
-        public static bool Guardar(Talleres tallere)
+        public static bool Guardar(Talleres taller)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Tallere.Add(tallere) != null)
+                if (contexto.Tallere.Add(taller) != null)
                 {
+
                     contexto.SaveChanges();
                     paso = true;
                 }
@@ -33,7 +34,7 @@ namespace Segundo_Parcial_Aplicada.BLL
             return paso;
         }
 
-        public static bool Modificar(Talleres tallere)
+        public static bool Modificar(Talleres taller)
         {
 
             bool paso = false;
@@ -42,7 +43,7 @@ namespace Segundo_Parcial_Aplicada.BLL
 
             try
             {
-                contexto.Entry(tallere).State = EntityState.Modified;
+                contexto.Entry(taller).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -50,33 +51,37 @@ namespace Segundo_Parcial_Aplicada.BLL
                 }
 
                 contexto.Dispose();
-
             }
+
             catch (Exception)
             {
                 throw;
             }
+
             return paso;
         }
 
+
         public static bool Eliminar(int id)
         {
-           bool paso = false;
+
+            bool paso = false;
 
             Contexto contexto = new Contexto();
 
             try
             {
 
-                Talleres tallere = contexto.Tallere.Find(id);
-                contexto.Tallere.Remove(tallere);
+                Talleres taller = contexto.Tallere.Find(id);
+                contexto.Tallere.Remove(taller);
                 if (contexto.SaveChanges() > 0)
                 {
-
                     paso = true;
 
                 }
+
                 contexto.Dispose();
+
             }
 
             catch (Exception)
@@ -85,40 +90,47 @@ namespace Segundo_Parcial_Aplicada.BLL
                 throw;
 
             }
+
             return paso;
+
         }
+
 
         public static Talleres Buscar(int id)
         {
 
-            Talleres tallere = new Talleres();
+            Talleres taller = new Talleres();
             Contexto contexto = new Contexto();
 
             try
             {
-                tallere = contexto.Tallere.Find(id);
+                taller = contexto.Tallere.Find(id);
                 contexto.Dispose();
 
             }
 
             catch (Exception)
             {
+
                 throw;
+
             }
-        
-            return tallere;
+
+            return taller;
+
         }
+
 
         public static List<Talleres> GetList(Expression<Func<Talleres, bool>> expression)
         {
 
-            List<Talleres> Talleres = new List<Talleres>();
+            List<Talleres> taller = new List<Talleres>();
             Contexto contexto = new Contexto();
 
             try
             {
 
-                Talleres = contexto.Tallere.Where(expression).ToList();
+                taller = contexto.Tallere.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -127,7 +139,7 @@ namespace Segundo_Parcial_Aplicada.BLL
                 throw;
             }
 
-            return Talleres;
+            return taller;
         }
     }
 }

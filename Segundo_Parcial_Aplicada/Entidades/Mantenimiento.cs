@@ -11,21 +11,30 @@ namespace Segundo_Parcial_Aplicada.Entidades
     {
         [Key]
         public int MantenimientoId { get; set; }
+        public int VehiculoId { get; set; }
         public DateTime Fecha { get; set; }
-        public float Monto { get; set; }
-
+        public DateTime ProxFecha { get; set; }
+        public decimal Subtotal { get; set; }
+        public decimal itbis { get; set; }
+        public decimal Total { get; set; }
 
         public virtual ICollection<Mantenimiento_Detalle> Detalle { get; set; }
 
         public Mantenimiento()
         {
             this.Detalle = new List<Mantenimiento_Detalle>();
+
+            MantenimientoId = 0;
+            Fecha = DateTime.Now;
+            Subtotal = 0;
+            itbis = 0;
+            Total = 0;
+
         }
 
-        public void AgregarDetalle(int id, int MantenimientoId, int VehiculoId, string Articulo, int Cantidad, int Precio, int importe, int Subtotal, int itbis, int total)
+        public void AgregarDetalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, int cantidad, int precio, int importe)
         {
-            this.Detalle.Add(new Mantenimiento_Detalle(id, MantenimientoId, VehiculoId, Articulo, Cantidad, Precio, importe, Subtotal, itbis, total));
+            this.Detalle.Add(new Mantenimiento_Detalle(id, mantenimientoId, tallerId, articulosId, articulo, cantidad, precio, importe));
         }
-
     }
 }

@@ -1,1 +1,0 @@
-CREATE DATABASE Segundo_ParcialDb

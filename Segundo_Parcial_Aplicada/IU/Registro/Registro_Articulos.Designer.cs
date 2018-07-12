@@ -43,20 +43,17 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
-            this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.GanancianumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.InventariotextBox = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.CostoTextBox = new System.Windows.Forms.TextBox();
+            this.GananciaBox = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +121,7 @@
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(144, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(171, 20);
             this.IdnumericUpDown.TabIndex = 41;
             // 
             // label1
@@ -140,7 +137,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(237, 52);
+            this.Buscarbutton.Location = new System.Drawing.Point(253, 52);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(59, 36);
             this.Buscarbutton.TabIndex = 39;
@@ -196,51 +193,8 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(76, 104);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(220, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(236, 20);
             this.DescripciontextBox.TabIndex = 129;
-            // 
-            // CostonumericUpDown
-            // 
-            this.CostonumericUpDown.DecimalPlaces = 2;
-            this.CostonumericUpDown.Location = new System.Drawing.Point(51, 147);
-            this.CostonumericUpDown.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.CostonumericUpDown.Name = "CostonumericUpDown";
-            this.CostonumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.CostonumericUpDown.TabIndex = 139;
-            this.CostonumericUpDown.Tag = "";
-            this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.CostonumericUpDown_ValueChanged);
-            // 
-            // PrecionumericUpDown
-            // 
-            this.PrecionumericUpDown.DecimalPlaces = 2;
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(51, 189);
-            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.PrecionumericUpDown.Name = "PrecionumericUpDown";
-            this.PrecionumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.PrecionumericUpDown.TabIndex = 140;
-            this.PrecionumericUpDown.ValueChanged += new System.EventHandler(this.PrecionumericUpDown_ValueChanged);
-            // 
-            // GanancianumericUpDown
-            // 
-            this.GanancianumericUpDown.DecimalPlaces = 2;
-            this.GanancianumericUpDown.Location = new System.Drawing.Point(224, 147);
-            this.GanancianumericUpDown.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.GanancianumericUpDown.Name = "GanancianumericUpDown";
-            this.GanancianumericUpDown.Size = new System.Drawing.Size(72, 20);
-            this.GanancianumericUpDown.TabIndex = 141;
-            this.GanancianumericUpDown.ValueChanged += new System.EventHandler(this.GanancianumericUpDown_ValueChanged);
             // 
             // MyerrorProvider
             // 
@@ -248,11 +202,32 @@
             // 
             // InventariotextBox
             // 
-            this.InventariotextBox.Location = new System.Drawing.Point(225, 185);
+            this.InventariotextBox.Location = new System.Drawing.Point(219, 185);
             this.InventariotextBox.Name = "InventariotextBox";
             this.InventariotextBox.ReadOnly = true;
-            this.InventariotextBox.Size = new System.Drawing.Size(71, 20);
+            this.InventariotextBox.Size = new System.Drawing.Size(93, 20);
             this.InventariotextBox.TabIndex = 138;
+            // 
+            // PrecioTextBox
+            // 
+            this.PrecioTextBox.Location = new System.Drawing.Point(51, 191);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PrecioTextBox.TabIndex = 140;
+            // 
+            // CostoTextBox
+            // 
+            this.CostoTextBox.Location = new System.Drawing.Point(51, 146);
+            this.CostoTextBox.Name = "CostoTextBox";
+            this.CostoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CostoTextBox.TabIndex = 139;
+            // 
+            // GananciaBox
+            // 
+            this.GananciaBox.Location = new System.Drawing.Point(219, 146);
+            this.GananciaBox.Name = "GananciaBox";
+            this.GananciaBox.Size = new System.Drawing.Size(93, 20);
+            this.GananciaBox.TabIndex = 141;
             // 
             // Registro_Articulos
             // 
@@ -260,9 +235,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(324, 292);
-            this.Controls.Add(this.GanancianumericUpDown);
-            this.Controls.Add(this.PrecionumericUpDown);
-            this.Controls.Add(this.CostonumericUpDown);
+            this.Controls.Add(this.GananciaBox);
+            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.CostoTextBox);
             this.Controls.Add(this.InventariotextBox);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
@@ -281,9 +256,6 @@
             this.Text = "Registro_Articulos";
             this.Load += new System.EventHandler(this.Registro_Articulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -300,10 +272,10 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox DescripciontextBox;
-        private System.Windows.Forms.NumericUpDown CostonumericUpDown;
-        private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
-        private System.Windows.Forms.NumericUpDown GanancianumericUpDown;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.TextBox InventariotextBox;
+        private System.Windows.Forms.TextBox GananciaBox;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.TextBox CostoTextBox;
     }
 }

@@ -42,13 +42,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
-            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidadTextBox = new System.Windows.Forms.TextBox();
             fechaLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,16 +178,16 @@
             this.ArticulocomboBox.Size = new System.Drawing.Size(220, 21);
             this.ArticulocomboBox.TabIndex = 125;
             // 
-            // CantidadnumericUpDown
-            // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(76, 167);
-            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(220, 20);
-            this.CantidadnumericUpDown.TabIndex = 128;
-            // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
+            // 
+            // CantidadTextBox
+            // 
+            this.CantidadTextBox.Location = new System.Drawing.Point(76, 169);
+            this.CantidadTextBox.Name = "CantidadTextBox";
+            this.CantidadTextBox.Size = new System.Drawing.Size(220, 20);
+            this.CantidadTextBox.TabIndex = 128;
             // 
             // Registro_Entrada_Articulos
             // 
@@ -196,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(322, 273);
-            this.Controls.Add(this.CantidadnumericUpDown);
+            this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(label2);
             this.Controls.Add(this.ArticulocomboBox);
             this.Controls.Add(label3);
@@ -211,9 +210,7 @@
             this.Controls.Add(this.Nuevobutton);
             this.Name = "Registro_Entrada_Articulos";
             this.Text = "Registro_Entrada_Articulos";
-            this.Load += new System.EventHandler(this.Registro_Entrada_Articulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,7 +228,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
-        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.TextBox CantidadTextBox;
     }
 }

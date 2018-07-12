@@ -24,27 +24,24 @@ namespace Segundo_Parcial_Aplicada.BLL
                     paso = true;
                 }
 
+                contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                contexto.Dispose();
-            }
-
             return paso;
-
         }
 
         public static bool Modificar(Vehiculos vehiculo)
         {
+
             bool paso = false;
+
             Contexto contexto = new Contexto();
+
             try
             {
-
                 contexto.Entry(vehiculo).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
@@ -52,88 +49,103 @@ namespace Segundo_Parcial_Aplicada.BLL
 
                 }
 
+                contexto.Dispose();
+
             }
+
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
 
+                throw;
+
+            }
 
             return paso;
+
+
+
         }
+
 
         public static bool Eliminar(int id)
         {
-            bool paso = false;
-            Contexto contexto = new Contexto();
 
+            bool paso = false;
+
+            Contexto contexto = new Contexto();
 
             try
             {
-                Vehiculos Vehiculo = contexto.Vehiculo.Find(id);
-                contexto.Vehiculo.Remove(Vehiculo);
 
+                Vehiculos vehiculo = contexto.Vehiculo.Find(id);
+                contexto.Vehiculo.Remove(vehiculo);
                 if (contexto.SaveChanges() > 0)
                 {
+
                     paso = true;
+
                 }
+
+                contexto.Dispose();
+
             }
+
             catch (Exception)
             {
+
                 throw;
+
             }
-            finally
-            {
-                contexto.Dispose();
-            }
+
             return paso;
 
         }
 
+
         public static Vehiculos Buscar(int id)
         {
+
+            Vehiculos vehiculo = new Vehiculos();
             Contexto contexto = new Contexto();
-            Vehiculos Vehiculo = new Vehiculos();
 
             try
             {
-                Vehiculo = contexto.Vehiculo.Find(id);
+                vehiculo = contexto.Vehiculo.Find(id);
+                contexto.Dispose();
+
             }
+
             catch (Exception)
             {
+
                 throw;
+
             }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return Vehiculo;
+
+            return vehiculo;
+
         }
+
 
         public static List<Vehiculos> GetList(Expression<Func<Vehiculos, bool>> expression)
         {
-            List<Vehiculos> Vehiculo = new List<Vehiculos>();
+
+            List<Vehiculos> vehiculos = new List<Vehiculos>();
             Contexto contexto = new Contexto();
 
             try
             {
-                Vehiculo = contexto.Vehiculo.Where(expression).ToList();
+
+                vehiculos = contexto.Vehiculo.Where(expression).ToList();
+                contexto.Dispose();
             }
             catch (Exception)
             {
+
                 throw;
             }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return Vehiculo;
+
+            return vehiculos;
         }
-
-
     }
 }

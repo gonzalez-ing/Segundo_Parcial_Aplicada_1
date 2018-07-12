@@ -43,7 +43,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro_Mantenimiento));
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.DetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.MantenimientoDetalledataGridView = new System.Windows.Forms.DataGridView();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
             this.VehiculocomboBox = new System.Windows.Forms.ComboBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -55,13 +55,13 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.SubTotalnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ItbisnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.TotalnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ImportenumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.TotalTextBox = new System.Windows.Forms.TextBox();
+            this.ItbisTextBox = new System.Windows.Forms.TextBox();
+            this.SubTotalTextBox = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.ImporteTextBox = new System.Windows.Forms.TextBox();
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -74,14 +74,9 @@
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MantenimientoDetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImportenumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -218,28 +213,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 67);
+            this.label1.Location = new System.Drawing.Point(27, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 31;
             this.label1.Text = "Mantenimiento ID";
             // 
-            // DetalledataGridView
+            // MantenimientoDetalledataGridView
             // 
-            this.DetalledataGridView.AllowUserToAddRows = false;
-            this.DetalledataGridView.AllowUserToDeleteRows = false;
-            this.DetalledataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MantenimientoDetalledataGridView.AllowUserToAddRows = false;
+            this.MantenimientoDetalledataGridView.AllowUserToDeleteRows = false;
+            this.MantenimientoDetalledataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(17, 278);
-            this.DetalledataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.DetalledataGridView.Name = "DetalledataGridView";
-            this.DetalledataGridView.ReadOnly = true;
-            this.DetalledataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DetalledataGridView.Size = new System.Drawing.Size(474, 141);
-            this.DetalledataGridView.TabIndex = 115;
+            this.MantenimientoDetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.MantenimientoDetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MantenimientoDetalledataGridView.Location = new System.Drawing.Point(17, 278);
+            this.MantenimientoDetalledataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.MantenimientoDetalledataGridView.Name = "MantenimientoDetalledataGridView";
+            this.MantenimientoDetalledataGridView.ReadOnly = true;
+            this.MantenimientoDetalledataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MantenimientoDetalledataGridView.Size = new System.Drawing.Size(474, 141);
+            this.MantenimientoDetalledataGridView.TabIndex = 115;
             // 
             // ArticulocomboBox
             // 
@@ -248,7 +243,6 @@
             this.ArticulocomboBox.Name = "ArticulocomboBox";
             this.ArticulocomboBox.Size = new System.Drawing.Size(160, 21);
             this.ArticulocomboBox.TabIndex = 123;
-            this.ArticulocomboBox.SelectedIndexChanged += new System.EventHandler(this.ArticulocomboBox_SelectedIndexChanged);
             // 
             // VehiculocomboBox
             // 
@@ -277,6 +271,7 @@
             this.fechaDateTimePicker1.Name = "fechaDateTimePicker1";
             this.fechaDateTimePicker1.Size = new System.Drawing.Size(150, 20);
             this.fechaDateTimePicker1.TabIndex = 134;
+            this.fechaDateTimePicker1.ValueChanged += new System.EventHandler(this.fechaDateTimePicker1_ValueChanged);
             // 
             // TallercomboBox
             // 
@@ -354,37 +349,9 @@
             this.label12.Text = "Registro De Mantenimiento";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // SubTotalnumericUpDown
-            // 
-            this.SubTotalnumericUpDown.Location = new System.Drawing.Point(374, 427);
-            this.SubTotalnumericUpDown.Name = "SubTotalnumericUpDown";
-            this.SubTotalnumericUpDown.Size = new System.Drawing.Size(117, 20);
-            this.SubTotalnumericUpDown.TabIndex = 143;
-            // 
-            // ItbisnumericUpDown
-            // 
-            this.ItbisnumericUpDown.Location = new System.Drawing.Point(374, 453);
-            this.ItbisnumericUpDown.Name = "ItbisnumericUpDown";
-            this.ItbisnumericUpDown.Size = new System.Drawing.Size(117, 20);
-            this.ItbisnumericUpDown.TabIndex = 144;
-            // 
-            // TotalnumericUpDown
-            // 
-            this.TotalnumericUpDown.Location = new System.Drawing.Point(374, 481);
-            this.TotalnumericUpDown.Name = "TotalnumericUpDown";
-            this.TotalnumericUpDown.Size = new System.Drawing.Size(117, 20);
-            this.TotalnumericUpDown.TabIndex = 145;
-            // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
-            // 
-            // PrecionumericUpDown
-            // 
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(287, 214);
-            this.PrecionumericUpDown.Name = "PrecionumericUpDown";
-            this.PrecionumericUpDown.Size = new System.Drawing.Size(153, 20);
-            this.PrecionumericUpDown.TabIndex = 146;
             // 
             // CantidadnumericUpDown
             // 
@@ -392,14 +359,42 @@
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(161, 20);
             this.CantidadnumericUpDown.TabIndex = 147;
+            this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             // 
-            // ImportenumericUpDown
+            // TotalTextBox
             // 
-            this.ImportenumericUpDown.Location = new System.Drawing.Point(287, 245);
-            this.ImportenumericUpDown.Name = "ImportenumericUpDown";
-            this.ImportenumericUpDown.ReadOnly = true;
-            this.ImportenumericUpDown.Size = new System.Drawing.Size(153, 20);
-            this.ImportenumericUpDown.TabIndex = 148;
+            this.TotalTextBox.Location = new System.Drawing.Point(374, 483);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.Size = new System.Drawing.Size(117, 20);
+            this.TotalTextBox.TabIndex = 151;
+            // 
+            // ItbisTextBox
+            // 
+            this.ItbisTextBox.Location = new System.Drawing.Point(374, 455);
+            this.ItbisTextBox.Name = "ItbisTextBox";
+            this.ItbisTextBox.Size = new System.Drawing.Size(117, 20);
+            this.ItbisTextBox.TabIndex = 150;
+            // 
+            // SubTotalTextBox
+            // 
+            this.SubTotalTextBox.Location = new System.Drawing.Point(373, 429);
+            this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.Size = new System.Drawing.Size(117, 20);
+            this.SubTotalTextBox.TabIndex = 149;
+            // 
+            // PrecioTextBox
+            // 
+            this.PrecioTextBox.Location = new System.Drawing.Point(287, 212);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(153, 20);
+            this.PrecioTextBox.TabIndex = 152;
+            // 
+            // ImporteTextBox
+            // 
+            this.ImporteTextBox.Location = new System.Drawing.Point(287, 248);
+            this.ImporteTextBox.Name = "ImporteTextBox";
+            this.ImporteTextBox.Size = new System.Drawing.Size(153, 20);
+            this.ImporteTextBox.TabIndex = 153;
             // 
             // Registro_Mantenimiento
             // 
@@ -407,12 +402,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(527, 513);
-            this.Controls.Add(this.ImportenumericUpDown);
+            this.Controls.Add(this.ImporteTextBox);
+            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.TotalTextBox);
+            this.Controls.Add(this.ItbisTextBox);
+            this.Controls.Add(this.SubTotalTextBox);
             this.Controls.Add(this.CantidadnumericUpDown);
-            this.Controls.Add(this.PrecionumericUpDown);
-            this.Controls.Add(this.TotalnumericUpDown);
-            this.Controls.Add(this.ItbisnumericUpDown);
-            this.Controls.Add(this.SubTotalnumericUpDown);
             this.Controls.Add(this.label12);
             this.Controls.Add(label11);
             this.Controls.Add(label10);
@@ -422,7 +417,7 @@
             this.Controls.Add(this.fechaDateTimePicker1);
             this.Controls.Add(label7);
             this.Controls.Add(this.Agregarbutton);
-            this.Controls.Add(this.DetalledataGridView);
+            this.Controls.Add(this.MantenimientoDetalledataGridView);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
             this.Controls.Add(label2);
@@ -442,14 +437,9 @@
             this.Text = "Registro De Mantenimiento";
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubTotalnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItbisnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MantenimientoDetalledataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImportenumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,19 +454,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Agregarbutton;
-        private System.Windows.Forms.DataGridView DetalledataGridView;
+        private System.Windows.Forms.DataGridView MantenimientoDetalledataGridView;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
         private System.Windows.Forms.ComboBox VehiculocomboBox;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker1;
         private System.Windows.Forms.ComboBox TallercomboBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown SubTotalnumericUpDown;
-        private System.Windows.Forms.NumericUpDown ItbisnumericUpDown;
-        private System.Windows.Forms.NumericUpDown TotalnumericUpDown;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
-        private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
-        private System.Windows.Forms.NumericUpDown ImportenumericUpDown;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
+        private System.Windows.Forms.TextBox ImporteTextBox;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.TextBox TotalTextBox;
+        private System.Windows.Forms.TextBox ItbisTextBox;
+        private System.Windows.Forms.TextBox SubTotalTextBox;
     }
 }

@@ -11,41 +11,46 @@ namespace Segundo_Parcial_Aplicada.Entidades
     public class Mantenimiento_Detalle
     {
         [Key]
+
         public int Id { get; set; }
         public int MantenimientoId { get; set; }
-        public int VehiculoId { get; set; }
+        public int TallerId { get; set; }
+        public int ArticulosId { get; set; }
         public string Articulo { get; set; }
         public int Cantidad { get; set; }
         public int Precio { get; set; }
         public int Importe { get; set; }
-        public int SubTotal { get; set; }
-        public int Itbis { get; set; }
-        public int Total { get; set; }
 
-        [ForeignKey("VehiculoId")]
-        public virtual Vehiculos Vehiculos { get; set; }
-
-        [ForeignKey("TalleresId")]
-        public virtual Talleres Talleres { get; set; }
-
+        [ForeignKey("ArticulosId")]
+        public virtual Articulos articulo { get; set; }
 
         public Mantenimiento_Detalle()
         {
-            this.Id = 0;
-            this.MantenimientoId = 0;
-
+            Id = 0;
+            MantenimientoId = 0;
         }
 
-        public Mantenimiento_Detalle(int id, int mantenimientoId, int vehiculoId, string articulo, int cantidad, int precio, int importe, int Subtotal, int itbis, int total)
+        public Mantenimiento_Detalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, int cantidad, int precio, int importe)
         {
             Id = id;
             MantenimientoId = mantenimientoId;
-            VehiculoId = vehiculoId;
+            TallerId = tallerId;
+            ArticulosId = articulosId;
+            Articulo = articulo;
             Cantidad = cantidad;
             Precio = precio;
             Importe = importe;
-            SubTotal = Subtotal;
-            Total = total;
+        }
+
+        public Mantenimiento_Detalle(int mantenimientoId, int articulosId, string articulo, int cantidad, int precio, int importe)
+        {
+
+            MantenimientoId = mantenimientoId;
+            ArticulosId = articulosId;
+            Articulo = articulo;
+            Cantidad = cantidad;
+            Precio = precio;
+            Importe = importe;
         }
     }
 }

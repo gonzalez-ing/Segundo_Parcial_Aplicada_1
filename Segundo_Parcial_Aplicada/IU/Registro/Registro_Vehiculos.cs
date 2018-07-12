@@ -24,6 +24,17 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             vehiculo.VehiculoId = Convert.ToInt32(IdnumericUpDown.Value);
             vehiculo.Descripcion = DescripciontextBox.Text;
+            vehiculo.MantenimientoTotal = Convert.ToInt32(IdnumericUpDown.Value);
+            return vehiculo;
+        }
+
+        private Vehiculos Limpiar()
+        {
+            Vehiculos vehiculo = new Vehiculos();
+            IdnumericUpDown.Value = 0;
+            DescripciontextBox.Clear();
+            MantenimientotextBox.Clear();
+
             return vehiculo;
         }
 
@@ -52,7 +63,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             if (Validar(1))
             {
-                MessageBox.Show("Debe Ingresar Un ID");
+                MessageBox.Show("Debe Ingresar un ID");
                 return;
             }
 
@@ -63,16 +74,16 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             {
 
                 DescripciontextBox.Text = vehiculo.Descripcion;
-                MantenimientotextBox.Text = vehiculo.Mantenimiento.ToString();
+                MantenimientotextBox.Text = vehiculo.MantenimientoTotal.ToString();
+
             }
             else
-                MessageBox.Show("No Se Encontro", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede encontrar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            IdnumericUpDown.Value = 0;
-            DescripciontextBox.Clear();
+            Limpiar();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -81,22 +92,25 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             if (Validar(2))
             {
 
-                MessageBox.Show("Debe Llenar Todos Los Campos");
+                MessageBox.Show("Debe Llenar todos los campos");
                 return;
             }
 
             MyerrorProvider.Clear();
+
 
             if (IdnumericUpDown.Value == 0)
                 paso = BLL.VehiculoBLL.Guardar(LlenarClase());
             else
                 paso = BLL.VehiculoBLL.Modificar(LlenarClase());
 
+
             if (paso)
 
                 MessageBox.Show("Guardado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No Se Puede Guardar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede guardar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Limpiar();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -105,7 +119,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             if (Validar(1))
             {
-                MessageBox.Show("Debe Ingresar Un ID");
+                MessageBox.Show("Debe Ingresar un ID");
                 return;
             }
 
@@ -114,7 +128,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             if (BLL.VehiculoBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No Se Puede Eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Registro_Vehiculos_Load(object sender, EventArgs e)

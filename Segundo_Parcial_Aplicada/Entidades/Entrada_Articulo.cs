@@ -10,22 +10,18 @@ namespace Segundo_Parcial_Aplicada.Entidades
     public class Entrada_Articulo
     {
         [Key]
-        public int EntradaId { get; set; }
-        public DateTime Fecha { get; set; }
-        public string Articulo { get; set; }
-        public int Cantidad { get; set; }
 
-        public virtual ICollection<Entradas_Detalle> Detalle { get; set; }
+        public int EntradaId { get; set; }
+        public string Fecha { get; set; }
+        public int Cantidad { get; set; }
+        public int ArticuloId { get; set; }
 
         public Entrada_Articulo()
-        {
-            this.Detalle = new List<Entradas_Detalle>();
-        }
+        { }
 
-        public void AgregarInventario(int id, int entradaId, int articuloId, int cantidad)
+        public override string ToString()
         {
-            this.Detalle.Add(new Entradas_Detalle(id, entradaId, articuloId, cantidad));
+            return this.Fecha;
         }
-
     }
 }

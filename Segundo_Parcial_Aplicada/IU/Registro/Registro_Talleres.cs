@@ -29,6 +29,15 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             return talleres;
         }
 
+        private Talleres Limpiar()
+        {
+            Talleres taller = new Talleres();
+            IdnumericUpDown.Value = 0;
+            NombretextBox.Clear();
+
+            return taller;
+        }
+
         private bool Validar(int validar)
         {
 
@@ -54,53 +63,52 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             if (Validar(1))
             {
-                MessageBox.Show("Debe Ingresar Un ID");
+                MessageBox.Show("Debe Ingrese un ID");
                 return;
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Talleres talleres = BLL.TalleresBLL.Buscar(id);
-            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
-            Talleres taller = repositorio.Buscar(id);
+            Talleres taller = BLL.TalleresBLL.Buscar(id);
 
-            if (talleres != null)
+            if (taller != null)
             {
 
-                NombretextBox.Text = talleres.Nombre;
+                NombretextBox.Text = taller.Nombre;
             }
             else
-                MessageBox.Show("No Se Encontro", "Hay Prblemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede encontro", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            IdnumericUpDown.Value = 0;
-            NombretextBox.Clear();
+          Limpiar();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
             bool paso = false;
             if (Validar(2))
             {
 
-                MessageBox.Show("Debe Llenar Todos Los Campos");
+                MessageBox.Show("Llenar todos los campos marcados");
                 return;
             }
 
             MyerrorProvider.Clear();
+
 
             if (IdnumericUpDown.Value == 0)
                 paso = BLL.TalleresBLL.Guardar(LlenarClase());
             else
                 paso = BLL.TalleresBLL.Modificar(LlenarClase());
 
+
             if (paso)
 
-                MessageBox.Show("Guardado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No Se Puede Guardar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Limpiar();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -109,18 +117,16 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             if (Validar(1))
             {
-                MessageBox.Show("Debe Ingresar Un ID");
+                MessageBox.Show("Ingrese un ID");
                 return;
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Repositorio<Talleres> repositorio = new Repositorio<Talleres>(new Contexto());
-            Talleres taller = repositorio.Buscar(id);
 
             if (BLL.TalleresBLL.Eliminar(id))
-                MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No Se Puede Eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo eliminar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Registro_Talleres_Load(object sender, EventArgs e)
