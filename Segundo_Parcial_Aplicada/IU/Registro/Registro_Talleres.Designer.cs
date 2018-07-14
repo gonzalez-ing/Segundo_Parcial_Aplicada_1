@@ -49,7 +49,7 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(14, 115);
+            label2.Location = new System.Drawing.Point(15, 115);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(44, 13);
@@ -65,7 +65,7 @@
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(125, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(176, 20);
             this.IdnumericUpDown.TabIndex = 41;
             // 
             // label1
@@ -81,7 +81,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(211, 54);
+            this.Buscarbutton.Location = new System.Drawing.Point(262, 54);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(69, 36);
             this.Buscarbutton.TabIndex = 39;
@@ -92,7 +92,7 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(209, 162);
+            this.Eliminarbutton.Location = new System.Drawing.Point(260, 185);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(71, 49);
             this.Eliminarbutton.TabIndex = 38;
@@ -103,7 +103,7 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
-            this.Guardarbutton.Location = new System.Drawing.Point(109, 162);
+            this.Guardarbutton.Location = new System.Drawing.Point(145, 185);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 37;
@@ -114,7 +114,7 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.Color.Honeydew;
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 162);
+            this.Nuevobutton.Location = new System.Drawing.Point(27, 185);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(74, 49);
             this.Nuevobutton.TabIndex = 36;
@@ -125,7 +125,7 @@
             // 
             this.NombretextBox.Location = new System.Drawing.Point(69, 112);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(211, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(262, 20);
             this.NombretextBox.TabIndex = 125;
             // 
             // label6
@@ -133,7 +133,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(17, 9);
+            this.label6.Location = new System.Drawing.Point(47, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(256, 29);
             this.label6.TabIndex = 127;
@@ -148,8 +148,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(297, 226);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(363, 253);
             this.Controls.Add(this.label6);
             this.Controls.Add(label2);
             this.Controls.Add(this.NombretextBox);

@@ -11,15 +11,14 @@ namespace Segundo_Parcial_Aplicada.Entidades
     public class Mantenimiento_Detalle
     {
         [Key]
-
         public int Id { get; set; }
         public int MantenimientoId { get; set; }
         public int TallerId { get; set; }
         public int ArticulosId { get; set; }
         public string Articulo { get; set; }
-        public int Cantidad { get; set; }
-        public int Precio { get; set; }
-        public int Importe { get; set; }
+        public decimal Cantidad { get; set; }
+        public decimal Precio { get; set; }
+        public decimal Importe { get; set; }
 
         [ForeignKey("ArticulosId")]
         public virtual Articulos articulo { get; set; }
@@ -30,7 +29,7 @@ namespace Segundo_Parcial_Aplicada.Entidades
             MantenimientoId = 0;
         }
 
-        public Mantenimiento_Detalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, int cantidad, int precio, int importe)
+        public Mantenimiento_Detalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
         {
             Id = id;
             MantenimientoId = mantenimientoId;
@@ -42,7 +41,7 @@ namespace Segundo_Parcial_Aplicada.Entidades
             Importe = importe;
         }
 
-        public Mantenimiento_Detalle(int mantenimientoId, int articulosId, string articulo, int cantidad, int precio, int importe)
+        public Mantenimiento_Detalle(int mantenimientoId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
         {
 
             MantenimientoId = mantenimientoId;
@@ -52,5 +51,6 @@ namespace Segundo_Parcial_Aplicada.Entidades
             Precio = precio;
             Importe = importe;
         }
+
     }
 }

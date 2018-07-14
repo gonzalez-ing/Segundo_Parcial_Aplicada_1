@@ -10,7 +10,6 @@ namespace Segundo_Parcial_Aplicada.Entidades
     public class Entrada_Articulo
     {
         [Key]
-
         public int EntradaId { get; set; }
         public string Fecha { get; set; }
         public int Cantidad { get; set; }

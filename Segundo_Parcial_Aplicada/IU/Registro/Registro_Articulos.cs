@@ -32,9 +32,9 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             articulo.ArticuloId = Convert.ToInt32(IdnumericUpDown.Value);
             articulo.Descripcion = DescripciontextBox.Text;
-            articulo.Costo = Convert.ToInt32(CostoTextBox.Text);
-            articulo.Ganancia = Convert.ToInt32(GananciaBox.Text);
-            articulo.Precio = Convert.ToInt32(PrecioTextBox.Text);
+            articulo.Costo = Convert.ToInt32(CostonumericUpDown.Value);
+            articulo.Ganancia = Convert.ToInt32(GanancianumericUpDown.Value);
+            articulo.Precio = Convert.ToInt32(PrecionumericUpDown.Value);
             articulo.Inventario = 0;
             return articulo;
         }
@@ -44,11 +44,10 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             Articulos vehiculo = new Articulos();
             IdnumericUpDown.Value = 0;
             DescripciontextBox.Clear();
-            CostoTextBox.Clear();
-            PrecioTextBox.Clear();
-            GananciaBox.Clear();
+            CostonumericUpDown.Value = 0;
+            PrecionumericUpDown.Value = 0;
+            GanancianumericUpDown.Value = 0;
             InventariotextBox.Clear();
-
 
             return vehiculo;
         }
@@ -84,9 +83,9 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             {
 
                 DescripciontextBox.Text = articulo.Descripcion;
-                CostoTextBox.Text = articulo.Costo.ToString();
-                GananciaBox.Text = articulo.Ganancia.ToString();
-                PrecioTextBox.Text = articulo.Precio.ToString();
+                CostonumericUpDown.Value = articulo.Costo;
+                GanancianumericUpDown.Value = articulo.Ganancia;
+                PrecionumericUpDown.Value = articulo.Precio;
                 InventariotextBox.Text = articulo.Inventario.ToString();
 
 
@@ -143,6 +142,64 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se puede eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            decimal costo = Convert.ToInt32(CostonumericUpDown.Value);
+            decimal precio = Convert.ToInt32(PrecionumericUpDown.Value);
+            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
+
+            if (CostonumericUpDown.Value < PrecionumericUpDown.Value && GanancianumericUpDown.Value == 0)
+            {
+                GanancianumericUpDown.Value = BLL.ArticuloBLL.CalcularGanancia(costo, precio);
+            }
+            else
+
+                if (CostonumericUpDown.Value > 0 && GanancianumericUpDown.Value > 0 && PrecionumericUpDown.Value == 0)
+            {
+
+                PrecionumericUpDown.Value = BLL.ArticuloBLL.CalcularPrecio(costo, ganancia);
+            }
+        }
+
+        private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
+
+            if (PrecionumericUpDown.Value > CostonumericUpDown.Value && GanancianumericUpDown.Value == 0)
+            {
+                GanancianumericUpDown.Value = BLL.ArticuloBLL.CalcularGanancia(costo, precio);
+
+            }
+            else
+            if (PrecionumericUpDown.Value > 0 && GanancianumericUpDown.Value > 0 && GanancianumericUpDown.Value == 0)
+            {
+
+                CostonumericUpDown.Value = BLL.ArticuloBLL.CalcularCosto(ganancia, precio);
+            }
+        }
+
+        private void GanancianumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            decimal costo = Convert.ToInt32(CostonumericUpDown.Value);
+            decimal precio = Convert.ToInt32(PrecionumericUpDown.Value);
+            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
+
+
+            if (CostonumericUpDown.Value > 0 && GanancianumericUpDown.Value > 0 && PrecionumericUpDown.Value == 0)
+            {
+
+                PrecionumericUpDown.Value = BLL.ArticuloBLL.CalcularPrecio(costo, ganancia);
+            }
+            else
+            if (PrecionumericUpDown.Value > 0 && GanancianumericUpDown.Value > 0 && CostonumericUpDown.Value == 0)
+            {
+
+                CostonumericUpDown.Value = BLL.ArticuloBLL.CalcularCosto(ganancia, precio);
+            }
         }
     }
 }

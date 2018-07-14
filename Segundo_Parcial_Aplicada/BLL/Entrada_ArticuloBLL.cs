@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-    public class EntradaArticuloBLL
+    public class Entrada_ArticuloBLL
     {
         public static bool Guardar(Entrada_Articulo entrada)
         {
@@ -20,10 +20,8 @@ namespace Segundo_Parcial_Aplicada.BLL
             {
                 if (contexto.Entrada.Add(entrada) != null)
                 {
-                    Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
-                    articulo.Inventario += entrada.Cantidad;
-                    BLL.ArticuloBLL.Modificar(articulo);
-
+                    var Articulo = contexto.Articulo.Find(entrada.ArticuloId);
+                    Articulo.Inventario += entrada.Cantidad;
                     contexto.SaveChanges();
 
                     paso = true;
@@ -44,18 +42,17 @@ namespace Segundo_Parcial_Aplicada.BLL
             bool paso = false;
 
             Contexto contexto = new Contexto();
-            Entrada_Articulo EntradaAnterior = BLL.EntradaArticuloBLL.Buscar(entrada.EntradaId);
 
-            int diferencia;
-
-            diferencia = entrada.Cantidad - EntradaAnterior.Cantidad;
-
-            Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
-            articulo.Inventario += diferencia;
-            BLL.ArticuloBLL.Modificar(articulo);
 
             try
             {
+                Entrada_Articulo EntradaAnt = BLL.Entrada_ArticuloBLL.Buscar(entrada.EntradaId);
+
+                int diferencia;
+                diferencia = entrada.Cantidad - EntradaAnt.Cantidad;
+                var Articulo = contexto.Articulo.Find(entrada.ArticuloId);
+                Articulo.Inventario += diferencia;
+
                 contexto.Entry(entrada).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
@@ -65,7 +62,6 @@ namespace Segundo_Parcial_Aplicada.BLL
                 }
 
                 contexto.Dispose();
-
             }
 
             catch (Exception)
@@ -76,9 +72,6 @@ namespace Segundo_Parcial_Aplicada.BLL
             }
 
             return paso;
-
-
-
         }
 
 
@@ -94,9 +87,8 @@ namespace Segundo_Parcial_Aplicada.BLL
 
                 Entrada_Articulo entrada = contexto.Entrada.Find(id);
 
-                Articulos articulo = BLL.ArticuloBLL.Buscar(entrada.ArticuloId);
-                articulo.Inventario -= entrada.Cantidad;
-                BLL.ArticuloBLL.Modificar(articulo);
+                var Articulo = contexto.Articulo.Find(entrada.ArticuloId);
+                Articulo.Inventario -= entrada.Cantidad;
 
                 contexto.Entrada.Remove(entrada);
                 if (contexto.SaveChanges() > 0)
@@ -107,7 +99,6 @@ namespace Segundo_Parcial_Aplicada.BLL
                 }
 
                 contexto.Dispose();
-
             }
 
             catch (Exception)
@@ -116,7 +107,6 @@ namespace Segundo_Parcial_Aplicada.BLL
                 throw;
 
             }
-
             return paso;
 
         }
@@ -143,19 +133,16 @@ namespace Segundo_Parcial_Aplicada.BLL
             }
 
             return entrada;
-
         }
 
 
         public static List<Entrada_Articulo> GetList(Expression<Func<Entrada_Articulo, bool>> expression)
         {
-
             List<Entrada_Articulo> entrada = new List<Entrada_Articulo>();
             Contexto contexto = new Contexto();
 
             try
             {
-
                 entrada = contexto.Entrada.Where(expression).ToList();
                 contexto.Dispose();
             }

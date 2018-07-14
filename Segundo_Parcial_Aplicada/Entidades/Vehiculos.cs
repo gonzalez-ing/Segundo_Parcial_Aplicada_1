@@ -9,9 +9,10 @@ namespace Segundo_Parcial_Aplicada.Entidades
 {
     public class Vehiculos
     {
+        [Key]
         public int VehiculoId { get; set; }
         public string Descripcion { get; set; }
-        public int MantenimientoTotal { get; set; }
+        public decimal MantenimientoTotal { get; set; }
 
         public Vehiculos()
         { }

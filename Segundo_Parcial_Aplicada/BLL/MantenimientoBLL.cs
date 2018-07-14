@@ -50,86 +50,78 @@ namespace Segundo_Parcial_Aplicada.BLL
                 }
 
                 contexto.Dispose();
-
             }
 
             catch (Exception)
             {
-
                 throw;
-
             }
 
             return paso;
-
-
-
         }
-
-    
-
 
 
         public static bool Eliminar(int id)
         {
 
             bool paso = false;
-
             Contexto contexto = new Contexto();
 
             try
             {
+                Mantenimiento mantenimiento = contexto.mantenimiento.Find(id);
 
-                Mantenimiento_Detalle mantenimiento = contexto.mantenimientos.Find(id);
+                if (mantenimiento != null)
+                {
+                    foreach (var item in mantenimiento.Detalle)
+                    {
+                        contexto.mantenimiento.Find(item.ArticulosId).Cantidad += item.Cantidad;
+                    }
+                    contexto.Vehiculo.Find(mantenimiento.VehiculoId).MantenimientoTotal -= mantenimiento.Total;
 
-          
+                    mantenimiento.Detalle.Count();
+                    contexto.mantenimiento.Remove(mantenimiento);
 
-                contexto.mantenimientos.Remove(mantenimiento);
+                }
                 if (contexto.SaveChanges() > 0)
                 {
 
                     paso = true;
-
                 }
-
                 contexto.Dispose();
 
-            }
-
-            catch (Exception)
-            {
-
-                throw;
 
             }
-
+            catch (Exception) { throw; }
             return paso;
 
         }
 
 
-        public static Mantenimiento_Detalle Buscar(int id)
+        public static Mantenimiento Buscar(int id)
         {
 
-            Mantenimiento_Detalle mantenimiento = new Mantenimiento_Detalle();
+            Mantenimiento mantenimiento = new Mantenimiento();
             Contexto contexto = new Contexto();
 
             try
             {
-                mantenimiento = contexto.mantenimientos.Find(id);
+                mantenimiento = contexto.mantenimiento.Find(id);
+                if (mantenimiento != null)
+                {
+                    mantenimiento.Detalle.Count();
+
+                    foreach (var item in mantenimiento.Detalle)
+                    {
+
+                        string s = item.articulo.Descripcion;
+                    }
+
+                }
                 contexto.Dispose();
-
             }
-
-            catch (Exception)
-            {
-
-                throw;
-
-            }
-
+            catch (Exception) { throw; }
             return mantenimiento;
-
         }
 
 

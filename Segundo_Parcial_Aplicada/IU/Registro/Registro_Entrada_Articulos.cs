@@ -81,7 +81,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Entrada_Articulo entrada = BLL.EntradaArticuloBLL.Buscar(id);
+            Entrada_Articulo entrada = BLL.Entrada_ArticuloBLL.Buscar(id);
 
             if (entrada != null)
             {
@@ -108,9 +108,9 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
 
             if (IdnumericUpDown.Value == 0)
-                paso = BLL.EntradaArticuloBLL.Guardar(LlenarClase());
+                paso = BLL.Entrada_ArticuloBLL.Guardar(LlenarClase());
             else
-                paso = BLL.EntradaArticuloBLL.Modificar(LlenarClase());
+                paso = BLL.Entrada_ArticuloBLL.Modificar(LlenarClase());
 
 
             if (paso)
@@ -133,10 +133,15 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
 
-            if (BLL.EntradaArticuloBLL.Eliminar(id))
+            if (BLL.Entrada_ArticuloBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se puede eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Registro_Entrada_Articulos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

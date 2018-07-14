@@ -45,9 +45,9 @@
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.InventariotextBox = new System.Windows.Forms.TextBox();
-            this.PrecioTextBox = new System.Windows.Forms.TextBox();
-            this.CostoTextBox = new System.Windows.Forms.TextBox();
-            this.GananciaBox = new System.Windows.Forms.TextBox();
+            this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.GanancianumericUpDown = new System.Windows.Forms.NumericUpDown();
             label2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -55,6 +55,9 @@
             label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -72,7 +75,7 @@
             // 
             label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(166, 188);
+            label5.Location = new System.Drawing.Point(193, 192);
             label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(54, 13);
@@ -83,7 +86,7 @@
             // 
             label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(11, 191);
+            label4.Location = new System.Drawing.Point(12, 198);
             label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(37, 13);
@@ -94,7 +97,7 @@
             // 
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(156, 149);
+            label3.Location = new System.Drawing.Point(183, 151);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(64, 13);
@@ -105,7 +108,7 @@
             // 
             label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(12, 149);
+            label7.Location = new System.Drawing.Point(8, 156);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(34, 13);
@@ -114,14 +117,14 @@
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(76, 62);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(74, 57);
             this.IdnumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(171, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(199, 20);
             this.IdnumericUpDown.TabIndex = 41;
             // 
             // label1
@@ -137,9 +140,9 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(253, 52);
+            this.Buscarbutton.Location = new System.Drawing.Point(290, 47);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(59, 36);
+            this.Buscarbutton.Size = new System.Drawing.Size(68, 36);
             this.Buscarbutton.TabIndex = 39;
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
@@ -148,9 +151,9 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(225, 241);
+            this.Eliminarbutton.Location = new System.Drawing.Point(287, 253);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(71, 40);
+            this.Eliminarbutton.Size = new System.Drawing.Size(71, 49);
             this.Eliminarbutton.TabIndex = 38;
             this.Eliminarbutton.UseVisualStyleBackColor = false;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
@@ -159,9 +162,9 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
-            this.Guardarbutton.Location = new System.Drawing.Point(122, 242);
+            this.Guardarbutton.Location = new System.Drawing.Point(154, 253);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 39);
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 37;
             this.Guardarbutton.UseVisualStyleBackColor = false;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
@@ -170,9 +173,9 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.Color.Honeydew;
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 241);
+            this.Nuevobutton.Location = new System.Drawing.Point(28, 253);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(74, 39);
+            this.Nuevobutton.Size = new System.Drawing.Size(74, 48);
             this.Nuevobutton.TabIndex = 36;
             this.Nuevobutton.UseVisualStyleBackColor = false;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
@@ -182,7 +185,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(28, 11);
+            this.label6.Location = new System.Drawing.Point(52, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(260, 29);
             this.label6.TabIndex = 53;
@@ -193,7 +196,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(76, 104);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(236, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(282, 20);
             this.DescripciontextBox.TabIndex = 129;
             // 
             // MyerrorProvider
@@ -202,42 +205,62 @@
             // 
             // InventariotextBox
             // 
-            this.InventariotextBox.Location = new System.Drawing.Point(219, 185);
+            this.InventariotextBox.Location = new System.Drawing.Point(252, 189);
             this.InventariotextBox.Name = "InventariotextBox";
             this.InventariotextBox.ReadOnly = true;
-            this.InventariotextBox.Size = new System.Drawing.Size(93, 20);
+            this.InventariotextBox.Size = new System.Drawing.Size(106, 20);
             this.InventariotextBox.TabIndex = 138;
             // 
-            // PrecioTextBox
+            // PrecionumericUpDown
             // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(51, 191);
-            this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.PrecioTextBox.TabIndex = 140;
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(51, 196);
+            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.PrecionumericUpDown.Name = "PrecionumericUpDown";
+            this.PrecionumericUpDown.Size = new System.Drawing.Size(123, 20);
+            this.PrecionumericUpDown.TabIndex = 140;
+            this.PrecionumericUpDown.ValueChanged += new System.EventHandler(this.PrecionumericUpDown_ValueChanged);
             // 
-            // CostoTextBox
+            // CostonumericUpDown
             // 
-            this.CostoTextBox.Location = new System.Drawing.Point(51, 146);
-            this.CostoTextBox.Name = "CostoTextBox";
-            this.CostoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CostoTextBox.TabIndex = 139;
+            this.CostonumericUpDown.Location = new System.Drawing.Point(51, 149);
+            this.CostonumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.CostonumericUpDown.Name = "CostonumericUpDown";
+            this.CostonumericUpDown.Size = new System.Drawing.Size(123, 20);
+            this.CostonumericUpDown.TabIndex = 139;
+            this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.CostonumericUpDown_ValueChanged);
             // 
-            // GananciaBox
+            // GanancianumericUpDown
             // 
-            this.GananciaBox.Location = new System.Drawing.Point(219, 146);
-            this.GananciaBox.Name = "GananciaBox";
-            this.GananciaBox.Size = new System.Drawing.Size(93, 20);
-            this.GananciaBox.TabIndex = 141;
+            this.GanancianumericUpDown.Location = new System.Drawing.Point(253, 149);
+            this.GanancianumericUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.GanancianumericUpDown.Name = "GanancianumericUpDown";
+            this.GanancianumericUpDown.Size = new System.Drawing.Size(106, 20);
+            this.GanancianumericUpDown.TabIndex = 141;
+            this.GanancianumericUpDown.ValueChanged += new System.EventHandler(this.GanancianumericUpDown_ValueChanged);
             // 
             // Registro_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(324, 292);
-            this.Controls.Add(this.GananciaBox);
-            this.Controls.Add(this.PrecioTextBox);
-            this.Controls.Add(this.CostoTextBox);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(387, 328);
+            this.Controls.Add(this.GanancianumericUpDown);
+            this.Controls.Add(this.PrecionumericUpDown);
+            this.Controls.Add(this.CostonumericUpDown);
             this.Controls.Add(this.InventariotextBox);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
@@ -257,6 +280,9 @@
             this.Load += new System.EventHandler(this.Registro_Articulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,8 +300,8 @@
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.TextBox InventariotextBox;
-        private System.Windows.Forms.TextBox GananciaBox;
-        private System.Windows.Forms.TextBox PrecioTextBox;
-        private System.Windows.Forms.TextBox CostoTextBox;
+        private System.Windows.Forms.NumericUpDown GanancianumericUpDown;
+        private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
+        private System.Windows.Forms.NumericUpDown CostonumericUpDown;
     }
 }

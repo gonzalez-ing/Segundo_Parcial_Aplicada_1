@@ -52,7 +52,7 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(8, 104);
+            label2.Location = new System.Drawing.Point(10, 107);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(63, 13);
@@ -63,7 +63,7 @@
             // 
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(8, 146);
+            label3.Location = new System.Drawing.Point(2, 146);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(76, 26);
@@ -72,20 +72,20 @@
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(73, 54);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(86, 57);
             this.IdnumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(131, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(167, 20);
             this.IdnumericUpDown.TabIndex = 41;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 59);
+            this.label1.Location = new System.Drawing.Point(14, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 40;
@@ -95,7 +95,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(215, 47);
+            this.Buscarbutton.Location = new System.Drawing.Point(259, 54);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(64, 37);
             this.Buscarbutton.TabIndex = 39;
@@ -106,7 +106,7 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(208, 205);
+            this.Eliminarbutton.Location = new System.Drawing.Point(252, 205);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(71, 49);
             this.Eliminarbutton.TabIndex = 38;
@@ -117,7 +117,7 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
-            this.Guardarbutton.Location = new System.Drawing.Point(110, 206);
+            this.Guardarbutton.Location = new System.Drawing.Point(136, 205);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 49);
             this.Guardarbutton.TabIndex = 37;
@@ -140,7 +140,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Location = new System.Drawing.Point(50, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(273, 29);
             this.label6.TabIndex = 53;
@@ -149,17 +149,17 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(73, 101);
+            this.DescripciontextBox.Location = new System.Drawing.Point(86, 104);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(206, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(237, 20);
             this.DescripciontextBox.TabIndex = 127;
             // 
             // MantenimientotextBox
             // 
-            this.MantenimientotextBox.Location = new System.Drawing.Point(89, 152);
+            this.MantenimientotextBox.Location = new System.Drawing.Point(86, 152);
             this.MantenimientotextBox.Name = "MantenimientotextBox";
             this.MantenimientotextBox.ReadOnly = true;
-            this.MantenimientotextBox.Size = new System.Drawing.Size(190, 20);
+            this.MantenimientotextBox.Size = new System.Drawing.Size(237, 20);
             this.MantenimientotextBox.TabIndex = 129;
             // 
             // MyerrorProvider
@@ -170,8 +170,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Moccasin;
-            this.ClientSize = new System.Drawing.Size(302, 268);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(364, 281);
             this.Controls.Add(label3);
             this.Controls.Add(this.MantenimientotextBox);
             this.Controls.Add(label2);

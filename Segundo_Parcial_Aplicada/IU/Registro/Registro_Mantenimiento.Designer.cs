@@ -62,6 +62,7 @@
             this.SubTotalTextBox = new System.Windows.Forms.TextBox();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.ImporteTextBox = new System.Windows.Forms.TextBox();
+            this.RemoverBoton = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -83,10 +84,11 @@
             // 
             label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(338, 483);
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(321, 486);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(31, 13);
+            label7.Size = new System.Drawing.Size(39, 15);
             label7.TabIndex = 131;
             label7.Text = "Total";
             // 
@@ -94,10 +96,11 @@
             // 
             label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(240, 247);
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(230, 246);
             label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(42, 13);
+            label5.Size = new System.Drawing.Size(56, 15);
             label5.TabIndex = 127;
             label5.Text = "Importe";
             // 
@@ -105,10 +108,11 @@
             // 
             label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(245, 214);
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(235, 213);
             label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(37, 13);
+            label4.Size = new System.Drawing.Size(48, 15);
             label4.TabIndex = 125;
             label4.Text = "Precio";
             // 
@@ -116,10 +120,11 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(15, 250);
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(-1, 248);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(49, 13);
+            label2.Size = new System.Drawing.Size(64, 15);
             label2.TabIndex = 124;
             label2.Text = "Cantidad";
             // 
@@ -127,10 +132,11 @@
             // 
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(17, 214);
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(1, 212);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(42, 13);
+            label3.Size = new System.Drawing.Size(55, 15);
             label3.TabIndex = 121;
             label3.Text = "Articulo";
             // 
@@ -138,30 +144,33 @@
             // 
             label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(17, 136);
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(1, 134);
             label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(48, 13);
+            label8.Size = new System.Drawing.Size(62, 15);
             label8.TabIndex = 119;
             label8.Text = "Vehiculo";
             // 
             // fechaLabel
             // 
             fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(27, 108);
+            fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechaLabel.Location = new System.Drawing.Point(12, 106);
             fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(37, 13);
+            fechaLabel.Size = new System.Drawing.Size(46, 15);
             fechaLabel.TabIndex = 117;
             fechaLabel.Text = "Fecha";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(261, 102);
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(245, 96);
             label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(76, 26);
+            label6.Size = new System.Drawing.Size(103, 30);
             label6.TabIndex = 133;
             label6.Text = "Proximo \r\nMantenimiento";
             // 
@@ -169,10 +178,11 @@
             // 
             label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(26, 173);
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Location = new System.Drawing.Point(10, 171);
             label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(33, 13);
+            label9.Size = new System.Drawing.Size(44, 15);
             label9.TabIndex = 135;
             label9.Text = "Taller";
             // 
@@ -180,10 +190,11 @@
             // 
             label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(313, 427);
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(296, 430);
             label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(56, 13);
+            label10.Size = new System.Drawing.Size(72, 15);
             label10.TabIndex = 138;
             label10.Text = "Sub. Total";
             // 
@@ -191,31 +202,33 @@
             // 
             label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(320, 453);
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Location = new System.Drawing.Point(303, 456);
             label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(49, 13);
+            label11.Size = new System.Drawing.Size(66, 15);
             label11.TabIndex = 140;
             label11.Text = "Itbis 18%";
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(122, 65);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(139, 65);
             this.IdnumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(116, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(99, 20);
             this.IdnumericUpDown.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 72);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(121, 15);
             this.label1.TabIndex = 31;
             this.label1.Text = "Mantenimiento ID";
             // 
@@ -233,7 +246,7 @@
             this.MantenimientoDetalledataGridView.Name = "MantenimientoDetalledataGridView";
             this.MantenimientoDetalledataGridView.ReadOnly = true;
             this.MantenimientoDetalledataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MantenimientoDetalledataGridView.Size = new System.Drawing.Size(474, 141);
+            this.MantenimientoDetalledataGridView.Size = new System.Drawing.Size(473, 142);
             this.MantenimientoDetalledataGridView.TabIndex = 115;
             // 
             // ArticulocomboBox
@@ -249,7 +262,7 @@
             this.VehiculocomboBox.FormattingEnabled = true;
             this.VehiculocomboBox.Location = new System.Drawing.Point(70, 133);
             this.VehiculocomboBox.Name = "VehiculocomboBox";
-            this.VehiculocomboBox.Size = new System.Drawing.Size(421, 21);
+            this.VehiculocomboBox.Size = new System.Drawing.Size(420, 21);
             this.VehiculocomboBox.TabIndex = 120;
             // 
             // fechaDateTimePicker
@@ -266,17 +279,17 @@
             // 
             this.fechaDateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.fechaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaDateTimePicker1.Location = new System.Drawing.Point(341, 102);
+            this.fechaDateTimePicker1.Location = new System.Drawing.Point(352, 102);
             this.fechaDateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDateTimePicker1.Name = "fechaDateTimePicker1";
-            this.fechaDateTimePicker1.Size = new System.Drawing.Size(150, 20);
+            this.fechaDateTimePicker1.Size = new System.Drawing.Size(139, 20);
             this.fechaDateTimePicker1.TabIndex = 134;
             this.fechaDateTimePicker1.ValueChanged += new System.EventHandler(this.fechaDateTimePicker1_ValueChanged);
             // 
             // TallercomboBox
             // 
             this.TallercomboBox.FormattingEnabled = true;
-            this.TallercomboBox.Location = new System.Drawing.Point(70, 170);
+            this.TallercomboBox.Location = new System.Drawing.Point(69, 173);
             this.TallercomboBox.Name = "TallercomboBox";
             this.TallercomboBox.Size = new System.Drawing.Size(421, 21);
             this.TallercomboBox.TabIndex = 136;
@@ -285,9 +298,9 @@
             // 
             this.Agregarbutton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Agregarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Agregarbutton.Image")));
-            this.Agregarbutton.Location = new System.Drawing.Point(446, 210);
+            this.Agregarbutton.Location = new System.Drawing.Point(446, 205);
             this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(45, 53);
+            this.Agregarbutton.Size = new System.Drawing.Size(45, 30);
             this.Agregarbutton.TabIndex = 129;
             this.Agregarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Agregarbutton.UseVisualStyleBackColor = false;
@@ -393,15 +406,30 @@
             // 
             this.ImporteTextBox.Location = new System.Drawing.Point(287, 248);
             this.ImporteTextBox.Name = "ImporteTextBox";
+            this.ImporteTextBox.ReadOnly = true;
             this.ImporteTextBox.Size = new System.Drawing.Size(153, 20);
             this.ImporteTextBox.TabIndex = 153;
+            // 
+            // RemoverBoton
+            // 
+            this.RemoverBoton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RemoverBoton.Image = ((System.Drawing.Image)(resources.GetObject("RemoverBoton.Image")));
+            this.RemoverBoton.Location = new System.Drawing.Point(446, 241);
+            this.RemoverBoton.Name = "RemoverBoton";
+            this.RemoverBoton.Size = new System.Drawing.Size(45, 32);
+            this.RemoverBoton.TabIndex = 154;
+            this.RemoverBoton.UseVisualStyleBackColor = false;
+            this.RemoverBoton.Click += new System.EventHandler(this.RemoverBoton_Click);
             // 
             // Registro_Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ClientSize = new System.Drawing.Size(527, 513);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(526, 514);
+            this.Controls.Add(this.RemoverBoton);
             this.Controls.Add(this.ImporteTextBox);
             this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.TotalTextBox);
@@ -433,6 +461,7 @@
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
+            this.DoubleBuffered = true;
             this.Name = "Registro_Mantenimiento";
             this.Text = "Registro De Mantenimiento";
             this.Load += new System.EventHandler(this.Registro_Load);
@@ -468,5 +497,6 @@
         private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.TextBox ItbisTextBox;
         private System.Windows.Forms.TextBox SubTotalTextBox;
+        private System.Windows.Forms.Button RemoverBoton;
     }
 }
