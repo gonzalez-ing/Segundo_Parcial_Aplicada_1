@@ -1,40 +1,32 @@
 CREATE DATABASE SegundoParcialDb
 GO
 USE SegundoParcialDb
-drop table Vehiculos
 GO
+
 CREATE TABLE Vehiculos
 (
     VehiculoId int primary key identity(1,1),
-	Descripcion varchar(max),
+	Descripcion varchar(50),
 	MantenimientoTotal decimal
 );
-Go
-drop table Talleres
-GO
+
 CREATE TABLE Talleres
 (
-
     TallerId int primary key identity(1,1),
 	Nombre varchar(30),
-
 );
-GO
-drop table Articulos
-GO
+
 CREATE TABLE Articulos
 (
  ArticuloId int primary key identity(1,1),
- Descripcion varchar(max),
+ Descripcion varchar(50),
  costo decimal,
  Ganancia int,
  precio decimal,
  Inventario int
 );
-GO
-drop table Mantenimiento
-GO
-CREATE TABLE Mantenimientos
+
+CREATE TABLE Mantenimiento
 (
 			MantenimientoId int primary key identity(1,1),
 			VehiculoId int,
@@ -45,10 +37,8 @@ CREATE TABLE Mantenimientos
 			Total decimal,
 			Cantidad decimal
 );
-GO
-drop table Mantenimientos_Detalle
-GO
-CREATE TABLE MantenimientosDetalles
+
+CREATE TABLE MantenimientoDetalle
 (
 			Id int primary key identity(1,1),
 			MantenimientoId int,
@@ -60,10 +50,8 @@ CREATE TABLE MantenimientosDetalles
             Importe decimal
       
 );
-GO
-drop table Entrada_Articulo
-GO
-CREATE TABLE EntradaArticulos
+
+CREATE TABLE EntradaArticulo
 (
 			EntradaId int primary key identity(1,1),
             Fecha varchar,
@@ -72,11 +60,10 @@ CREATE TABLE EntradaArticulos
            
       
 );
-GO
 
 select *from Articulos
-select * from EntradaArticulos
+select * from EntradaArticulo
 select * from Talleres
 select * from Vehiculos
-select* from MantenimientosDetalles
-select* from Mantenimientos
+select* from MantenimientoDetalle
+select* from Mantenimiento

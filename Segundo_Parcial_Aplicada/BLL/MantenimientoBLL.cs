@@ -125,10 +125,10 @@ namespace Segundo_Parcial_Aplicada.BLL
         }
 
 
-        public static List<Mantenimiento_Detalle> GetList(Expression<Func<Mantenimiento_Detalle, bool>> expression)
+        public static List<MantenimientosDetalles> GetList(Expression<Func<MantenimientosDetalles, bool>> expression)
         {
 
-            List<Mantenimiento_Detalle> mantenimientos = new List<Mantenimiento_Detalle>();
+            List<MantenimientosDetalles> mantenimientos = new List<MantenimientosDetalles>();
             Contexto contexto = new Contexto();
 
             try
@@ -145,19 +145,26 @@ namespace Segundo_Parcial_Aplicada.BLL
 
             return mantenimientos;
         }
-        public static decimal CalcularImporte(decimal precio, int cantidad)
+
+
+        public static Decimal CalcularImporte(Decimal cantidad, Decimal precio)
         {
-            return Convert.ToDecimal(precio) * Convert.ToInt32(cantidad);
+            return cantidad * precio;
         }
 
-        public static decimal CalcularItbis(decimal subtotal)
+        public static Decimal CalcularSubTotal(Decimal importe)
         {
-            return Convert.ToDecimal(subtotal) * Convert.ToDecimal(0.18);
+            return importe;
         }
 
-        public static decimal Total(decimal subtotal, decimal itbis)
+        public static Decimal CalcularItbis(Decimal subtotal)
         {
-            return Convert.ToDecimal(subtotal) + Convert.ToDecimal(itbis);
+            return subtotal * (decimal)0.18;
+        }
+
+        public static Decimal CalcularTotal(Decimal subtotal, Decimal itbis)
+        {
+            return subtotal + itbis;
         }
 
     }

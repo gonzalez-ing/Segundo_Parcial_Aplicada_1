@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.Entidades
 {
-    public class Entrada_Articulo
+    public class EntradaArticulos
     {
         [Key]
         public int EntradaId { get; set; }
@@ -15,7 +15,7 @@ namespace Segundo_Parcial_Aplicada.Entidades
         public int Cantidad { get; set; }
         public int ArticuloId { get; set; }
 
-        public Entrada_Articulo()
+        public EntradaArticulos()
         { }
 
         public override string ToString()

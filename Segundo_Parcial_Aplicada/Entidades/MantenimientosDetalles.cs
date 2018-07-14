@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.Entidades
 {
-    public class Mantenimiento_Detalle
+    public class MantenimientosDetalles
     {
         [Key]
         public int Id { get; set; }
@@ -23,13 +23,13 @@ namespace Segundo_Parcial_Aplicada.Entidades
         [ForeignKey("ArticulosId")]
         public virtual Articulos articulo { get; set; }
 
-        public Mantenimiento_Detalle()
+        public MantenimientosDetalles()
         {
             Id = 0;
             MantenimientoId = 0;
         }
 
-        public Mantenimiento_Detalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
+        public MantenimientosDetalles(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
         {
             Id = id;
             MantenimientoId = mantenimientoId;
@@ -41,7 +41,7 @@ namespace Segundo_Parcial_Aplicada.Entidades
             Importe = importe;
         }
 
-        public Mantenimiento_Detalle(int mantenimientoId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
+        public MantenimientosDetalles(int mantenimientoId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
         {
 
             MantenimientoId = mantenimientoId;

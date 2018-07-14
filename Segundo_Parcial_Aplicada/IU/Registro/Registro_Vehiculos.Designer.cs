@@ -52,10 +52,11 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.Location = new System.Drawing.Point(10, 107);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 13);
+            label2.Size = new System.Drawing.Size(83, 15);
             label2.TabIndex = 128;
             label2.Text = "Descripcion";
             // 
@@ -63,31 +64,33 @@
             // 
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.Location = new System.Drawing.Point(2, 146);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(76, 26);
+            label3.Size = new System.Drawing.Size(103, 30);
             label3.TabIndex = 130;
             label3.Text = "       Total\r\nMantenimiento";
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(86, 57);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(100, 57);
             this.IdnumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(167, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(153, 20);
             this.IdnumericUpDown.TabIndex = 41;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 64);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 40;
             this.label1.Text = "Vehiculo ID";
             // 
@@ -149,17 +152,17 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(86, 104);
+            this.DescripciontextBox.Location = new System.Drawing.Point(100, 104);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(237, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(223, 20);
             this.DescripciontextBox.TabIndex = 127;
             // 
             // MantenimientotextBox
             // 
-            this.MantenimientotextBox.Location = new System.Drawing.Point(86, 152);
+            this.MantenimientotextBox.Location = new System.Drawing.Point(110, 152);
             this.MantenimientotextBox.Name = "MantenimientotextBox";
             this.MantenimientotextBox.ReadOnly = true;
-            this.MantenimientotextBox.Size = new System.Drawing.Size(237, 20);
+            this.MantenimientotextBox.Size = new System.Drawing.Size(213, 20);
             this.MantenimientotextBox.TabIndex = 129;
             // 
             // MyerrorProvider

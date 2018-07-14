@@ -44,6 +44,8 @@
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.MantenimientoDetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.segundoParcialDbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.segundoParcialDbDataSet = new Segundo_Parcial_Aplicada.SegundoParcialDbDataSet();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
             this.VehiculocomboBox = new System.Windows.Forms.ComboBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -76,6 +78,8 @@
             label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MantenimientoDetalledataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segundoParcialDbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segundoParcialDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +137,7 @@
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(1, 212);
+            label3.Location = new System.Drawing.Point(8, 212);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(55, 15);
@@ -145,7 +149,7 @@
             label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(1, 134);
+            label8.Location = new System.Drawing.Point(3, 139);
             label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(62, 15);
@@ -179,7 +183,7 @@
             label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(10, 171);
+            label9.Location = new System.Drawing.Point(10, 179);
             label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(44, 15);
@@ -239,8 +243,10 @@
             this.MantenimientoDetalledataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MantenimientoDetalledataGridView.AutoGenerateColumns = false;
             this.MantenimientoDetalledataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.MantenimientoDetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MantenimientoDetalledataGridView.DataSource = this.segundoParcialDbDataSetBindingSource;
             this.MantenimientoDetalledataGridView.Location = new System.Drawing.Point(17, 278);
             this.MantenimientoDetalledataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.MantenimientoDetalledataGridView.Name = "MantenimientoDetalledataGridView";
@@ -249,6 +255,16 @@
             this.MantenimientoDetalledataGridView.Size = new System.Drawing.Size(473, 142);
             this.MantenimientoDetalledataGridView.TabIndex = 115;
             // 
+            // segundoParcialDbDataSetBindingSource
+            // 
+            this.segundoParcialDbDataSetBindingSource.DataSource = this.segundoParcialDbDataSet;
+            this.segundoParcialDbDataSetBindingSource.Position = 0;
+            // 
+            // segundoParcialDbDataSet
+            // 
+            this.segundoParcialDbDataSet.DataSetName = "SegundoParcialDbDataSet";
+            this.segundoParcialDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ArticulocomboBox
             // 
             this.ArticulocomboBox.FormattingEnabled = true;
@@ -256,6 +272,7 @@
             this.ArticulocomboBox.Name = "ArticulocomboBox";
             this.ArticulocomboBox.Size = new System.Drawing.Size(160, 21);
             this.ArticulocomboBox.TabIndex = 123;
+            this.ArticulocomboBox.SelectedIndexChanged += new System.EventHandler(this.ArticulocomboBox_SelectedIndexChanged);
             // 
             // VehiculocomboBox
             // 
@@ -467,6 +484,8 @@
             this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MantenimientoDetalledataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segundoParcialDbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segundoParcialDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -498,5 +517,7 @@
         private System.Windows.Forms.TextBox ItbisTextBox;
         private System.Windows.Forms.TextBox SubTotalTextBox;
         private System.Windows.Forms.Button RemoverBoton;
+        private System.Windows.Forms.BindingSource segundoParcialDbDataSetBindingSource;
+        private SegundoParcialDbDataSet segundoParcialDbDataSet;
     }
 }

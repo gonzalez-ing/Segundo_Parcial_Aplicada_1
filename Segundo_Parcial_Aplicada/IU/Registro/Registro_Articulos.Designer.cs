@@ -64,10 +64,11 @@
             // 
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.Location = new System.Drawing.Point(8, 107);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 13);
+            label2.Size = new System.Drawing.Size(83, 15);
             label2.TabIndex = 130;
             label2.Text = "Descripcion";
             // 
@@ -75,10 +76,11 @@
             // 
             label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.Location = new System.Drawing.Point(193, 192);
             label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(54, 13);
+            label5.Size = new System.Drawing.Size(70, 15);
             label5.TabIndex = 137;
             label5.Text = "Inventario";
             // 
@@ -86,10 +88,11 @@
             // 
             label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(12, 198);
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(3, 201);
             label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(37, 13);
+            label4.Size = new System.Drawing.Size(48, 15);
             label4.TabIndex = 135;
             label4.Text = "Precio";
             // 
@@ -97,10 +100,11 @@
             // 
             label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.Location = new System.Drawing.Point(183, 151);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(64, 13);
+            label3.Size = new System.Drawing.Size(84, 15);
             label3.TabIndex = 134;
             label3.Text = "% Ganancia";
             // 
@@ -108,16 +112,17 @@
             // 
             label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(8, 156);
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(8, 151);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(34, 13);
+            label7.Size = new System.Drawing.Size(43, 15);
             label7.TabIndex = 131;
             label7.Text = "Costo";
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(74, 57);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(85, 63);
             this.IdnumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -130,9 +135,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 40;
             this.label1.Text = "Articulo ID";
             // 
@@ -140,7 +146,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.Honeydew;
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
-            this.Buscarbutton.Location = new System.Drawing.Point(290, 47);
+            this.Buscarbutton.Location = new System.Drawing.Point(290, 53);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(68, 36);
             this.Buscarbutton.TabIndex = 39;
@@ -194,9 +200,9 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(76, 104);
+            this.DescripciontextBox.Location = new System.Drawing.Point(93, 106);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(282, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(265, 20);
             this.DescripciontextBox.TabIndex = 129;
             // 
             // MyerrorProvider
@@ -205,10 +211,10 @@
             // 
             // InventariotextBox
             // 
-            this.InventariotextBox.Location = new System.Drawing.Point(252, 189);
+            this.InventariotextBox.Location = new System.Drawing.Point(268, 191);
             this.InventariotextBox.Name = "InventariotextBox";
             this.InventariotextBox.ReadOnly = true;
-            this.InventariotextBox.Size = new System.Drawing.Size(106, 20);
+            this.InventariotextBox.Size = new System.Drawing.Size(90, 20);
             this.InventariotextBox.TabIndex = 138;
             // 
             // PrecionumericUpDown
@@ -239,14 +245,14 @@
             // 
             // GanancianumericUpDown
             // 
-            this.GanancianumericUpDown.Location = new System.Drawing.Point(253, 149);
+            this.GanancianumericUpDown.Location = new System.Drawing.Point(269, 149);
             this.GanancianumericUpDown.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.GanancianumericUpDown.Name = "GanancianumericUpDown";
-            this.GanancianumericUpDown.Size = new System.Drawing.Size(106, 20);
+            this.GanancianumericUpDown.Size = new System.Drawing.Size(89, 20);
             this.GanancianumericUpDown.TabIndex = 141;
             this.GanancianumericUpDown.ValueChanged += new System.EventHandler(this.GanancianumericUpDown_ValueChanged);
             // 

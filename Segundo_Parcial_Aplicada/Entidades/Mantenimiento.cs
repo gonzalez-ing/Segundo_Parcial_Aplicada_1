@@ -20,11 +20,11 @@ namespace Segundo_Parcial_Aplicada.Entidades
         public decimal Cantidad { get; set; }
 
 
-        public virtual ICollection<Mantenimiento_Detalle> Detalle { get; set; }
+        public virtual ICollection<MantenimientosDetalles> Detalle { get; set; }
 
         public Mantenimiento()
         {
-            this.Detalle = new List<Mantenimiento_Detalle>();
+            this.Detalle = new List<MantenimientosDetalles>();
 
             MantenimientoId = 0;
             Fecha = DateTime.Now;
@@ -37,7 +37,7 @@ namespace Segundo_Parcial_Aplicada.Entidades
 
         public void AgregarDetalle(int id, int mantenimientoId, int tallerId, int articulosId, string articulo, decimal cantidad, decimal precio, decimal importe)
         {
-            this.Detalle.Add(new Mantenimiento_Detalle(id, mantenimientoId, tallerId, articulosId, articulo, cantidad, precio, importe));
+            this.Detalle.Add(new MantenimientosDetalles(id, mantenimientoId, tallerId, articulosId, articulo, cantidad, precio, importe));
         }
     }
 }

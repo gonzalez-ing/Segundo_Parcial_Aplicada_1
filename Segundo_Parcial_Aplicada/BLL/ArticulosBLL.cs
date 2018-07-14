@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-    public class ArticuloBLL
+    public class ArticulosBLL
     {
         public static bool Guardar(Articulos articulo)
         {
@@ -157,27 +157,36 @@ namespace Segundo_Parcial_Aplicada.BLL
 
             return Descripcion;
         }
-        public static decimal CalcularCosto(decimal Ganancia, decimal precio)
+        public static Decimal CalcularGanancias(Decimal precio, Decimal costo)
         {
-            Ganancia /= 100;
-            return Convert.ToDecimal(precio) * Convert.ToDecimal(Ganancia);
+            return (((precio - costo) / costo) * 100);
         }
 
-        public static decimal CalcularGanancia(decimal Costo, decimal Precio)
+        public static Decimal CalcularPrecio(Decimal costo, Decimal ganancia)
         {
-            Precio -= Costo;
-            Decimal totalganancia = (Convert.ToDecimal(Precio) / Convert.ToDecimal(Costo)) * 100;
-
-            return totalganancia;
-
+            ganancia /= 100;
+            ganancia *= costo;
+            return costo + ganancia;
         }
 
-        public static decimal CalcularPrecio(decimal Costo, decimal Ganancia)
+        public static Decimal CalcularImporte(Decimal cantidad, Decimal precio)
         {
-            Ganancia /= 100;
-            Ganancia *= Costo;
-            return Convert.ToDecimal(Costo) + Convert.ToDecimal(Ganancia);
+            return cantidad * precio;
+        }
 
+        public static Decimal CalcularSubTotal(Decimal importe)
+        {
+            return importe;
+        }
+
+        public static Decimal CalcularItbis(Decimal subtotal)
+        {
+            return subtotal * (decimal)0.18;
+        }
+
+        public static Decimal CalcularTotal(Decimal subtotal, Decimal itbis)
+        {
+            return subtotal + itbis;
         }
     }
 }

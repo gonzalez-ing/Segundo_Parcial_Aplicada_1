@@ -160,14 +160,14 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            List<Mantenimiento_Detalle> detalle = new List<Mantenimiento_Detalle>();
+            List<MantenimientosDetalles> Detalle = new List<MantenimientosDetalles>();
 
             if (MantenimientoDetalledataGridView.DataSource != null)
             {
-                detalle = (List<Mantenimiento_Detalle>)MantenimientoDetalledataGridView.DataSource;
+                Detalle = (List<MantenimientosDetalles>)MantenimientoDetalledataGridView.DataSource;
             }
 
-            foreach (var item in BLL.ArticuloBLL.GetList(x => x.Inventario < CantidadnumericUpDown.Value))
+            foreach (var item in BLL.ArticulosBLL.GetList(x => x.Inventario < CantidadnumericUpDown.Value))
             {
 
                 MessageBox.Show("No hay Nada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,19 +180,19 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
             else
             {
-                detalle.Add(
-                    new Mantenimiento_Detalle(id: 0,
+                Detalle.Add(
+                    new MantenimientosDetalles(id: 0,
                     mantenimientoId: (int)Convert.ToInt32(IdnumericUpDown.Value),
                     tallerId: (int)TallercomboBox.SelectedValue,
                        articulosId: (int)ArticulocomboBox.SelectedValue,
-                            articulo: (string)BLL.ArticuloBLL.RetornarDescripcion(ArticulocomboBox.Text),
+                            articulo: (string)BLL.ArticulosBLL.RetornarDescripcion(ArticulocomboBox.Text),
                         cantidad: Convert.ToDecimal(CantidadnumericUpDown.Value),
                         precio: Convert.ToDecimal(PrecioTextBox.Text),
                         importe: Convert.ToDecimal(ImporteTextBox.Text)));
 
 
                 MantenimientoDetalledataGridView.DataSource = null;
-                MantenimientoDetalledataGridView.DataSource = detalle;
+                MantenimientoDetalledataGridView.DataSource = Detalle;
 
 
                 MantenimientoDetalledataGridView.Columns["Id"].Visible = false;
@@ -204,29 +204,11 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             decimal subtotal = 0;
 
-            foreach (var item in detalle)
+            foreach (var item in Detalle)
             {
                 subtotal += item.Importe;
 
             }
-
-            SubTotalTextBox.Text = subtotal.ToString();
-
-            itbis = BLL.MantenimientoBLL.CalcularItbis(Convert.ToDecimal(SubTotalTextBox.Text));
-
-            ItbisTextBox.Text = itbis.ToString();
-
-            Total = BLL.MantenimientoBLL.Total(Convert.ToDecimal(SubTotalTextBox.Text), Convert.ToDecimal(ItbisTextBox.Text));
-
-            TotalTextBox.Text = Total.ToString();
-            itbis = BLL.MantenimientoBLL.CalcularItbis(Convert.ToDecimal(SubTotalTextBox.Text));
-
-            ItbisTextBox.Text = itbis.ToString();
-
-            Total = BLL.MantenimientoBLL.Total(Convert.ToDecimal(SubTotalTextBox.Text), Convert.ToDecimal(ItbisTextBox.Text));
-
-            TotalTextBox.Text = Total.ToString();
-
         }
             private void Nuevobutton_Click(object sender, EventArgs e)
             {
@@ -281,13 +263,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
         private void fechaDateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            fechaDateTimePicker.Value = fechaDateTimePicker.Value;
-
-
-            DateTime fecha = Convert.ToDateTime(fechaDateTimePicker1.Text);
-            fecha = fecha.AddMonths(3);
-
-            fechaDateTimePicker1.Text = fecha.ToString();
+            
         }
 
         private void RemoverBoton_Click(object sender, EventArgs e)
@@ -296,7 +272,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             if (MantenimientoDetalledataGridView.Rows.Count > 0 && MantenimientoDetalledataGridView.CurrentRow != null)
             {
 
-                List<Mantenimiento_Detalle> detalle = (List<Mantenimiento_Detalle>)MantenimientoDetalledataGridView.DataSource;
+                List<MantenimientosDetalles> detalle = (List<MantenimientosDetalles>)MantenimientoDetalledataGridView.DataSource;
 
 
                 detalle.RemoveAt(MantenimientoDetalledataGridView.CurrentRow.Index);
@@ -314,12 +290,21 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
                 itbis = BLL.MantenimientoBLL.CalcularItbis(Convert.ToDecimal(SubTotalTextBox.Text));
                 ItbisTextBox.Text = itbis.ToString();
 
-                Total = BLL.MantenimientoBLL.Total(Convert.ToDecimal(SubTotalTextBox.Text), Convert.ToDecimal(ItbisTextBox.Text));
+                Total = BLL.MantenimientoBLL.CalcularTotal(Convert.ToDecimal(SubTotalTextBox.Text), Convert.ToDecimal(ItbisTextBox.Text));
 
                 TotalTextBox.Text = Total.ToString();
 
                 MantenimientoDetalledataGridView.DataSource = null;
                 MantenimientoDetalledataGridView.DataSource = detalle;
+            }
+        }
+
+        private void ArticulocomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var item in BLL.ArticulosBLL.GetList(x => x.Descripcion == ArticulocomboBox.Text))
+            {
+                PrecioTextBox.Text = item.Precio.ToString();
+
             }
         }
     }

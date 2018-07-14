@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-    public class Entrada_ArticuloBLL
+    public class EntradaArticuloBLL
     {
-        public static bool Guardar(Entrada_Articulo entrada)
+        public static bool Guardar(EntradaArticulos entrada)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -36,7 +36,7 @@ namespace Segundo_Parcial_Aplicada.BLL
             return paso;
         }
 
-        public static bool Modificar(Entrada_Articulo entrada)
+        public static bool Modificar(EntradaArticulos entrada)
         {
 
             bool paso = false;
@@ -46,7 +46,7 @@ namespace Segundo_Parcial_Aplicada.BLL
 
             try
             {
-                Entrada_Articulo EntradaAnt = BLL.Entrada_ArticuloBLL.Buscar(entrada.EntradaId);
+                EntradaArticulos EntradaAnt = BLL.EntradaArticuloBLL.Buscar(entrada.EntradaId);
 
                 int diferencia;
                 diferencia = entrada.Cantidad - EntradaAnt.Cantidad;
@@ -85,7 +85,7 @@ namespace Segundo_Parcial_Aplicada.BLL
             try
             {
 
-                Entrada_Articulo entrada = contexto.Entrada.Find(id);
+                EntradaArticulos entrada = contexto.Entrada.Find(id);
 
                 var Articulo = contexto.Articulo.Find(entrada.ArticuloId);
                 Articulo.Inventario -= entrada.Cantidad;
@@ -112,33 +112,32 @@ namespace Segundo_Parcial_Aplicada.BLL
         }
 
 
-        public static Entrada_Articulo Buscar(int id)
+        public static EntradaArticulos Buscar(int id)
         {
 
-            Entrada_Articulo entrada = new Entrada_Articulo();
             Contexto contexto = new Contexto();
+            EntradaArticulos entradasArticulos = new EntradaArticulos();
 
             try
             {
-                entrada = contexto.Entrada.Find(id);
-                contexto.Dispose();
+                entradasArticulos = contexto.Entrada.Find(id);
 
             }
-
             catch (Exception)
             {
-
                 throw;
-
             }
-
-            return entrada;
+            finally
+            {
+                contexto.Dispose();
+            }
+            return entradasArticulos;
         }
 
 
-        public static List<Entrada_Articulo> GetList(Expression<Func<Entrada_Articulo, bool>> expression)
+        public static List<EntradaArticulos> GetList(Expression<Func<EntradaArticulos, bool>> expression)
         {
-            List<Entrada_Articulo> entrada = new List<Entrada_Articulo>();
+            List<EntradaArticulos> entrada = new List<EntradaArticulos>();
             Contexto contexto = new Contexto();
 
             try

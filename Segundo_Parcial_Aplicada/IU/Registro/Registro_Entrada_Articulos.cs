@@ -21,10 +21,10 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             LlenarComboBox();
         }
 
-        private Entrada_Articulo LlenarClase()
+        private EntradaArticulos LlenarClase()
         {
 
-            Entrada_Articulo entrada = new Entrada_Articulo();
+            EntradaArticulos entrada = new EntradaArticulos();
 
             entrada.EntradaId = Convert.ToInt32(IdnumericUpDown.Value);
             entrada.ArticuloId = (int)ArticulocomboBox.SelectedValue;
@@ -34,9 +34,9 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             return entrada;
         }
 
-        private Entrada_Articulo Limpiar()
+        private EntradaArticulos Limpiar()
         {
-            Entrada_Articulo entrada = new Entrada_Articulo();
+            EntradaArticulos entrada = new EntradaArticulos();
             IdnumericUpDown.Value = 0;
             CantidadTextBox.Clear();
 
@@ -81,7 +81,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
             }
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
-            Entrada_Articulo entrada = BLL.Entrada_ArticuloBLL.Buscar(id);
+            EntradaArticulos entrada = BLL.EntradaArticuloBLL.Buscar(id);
 
             if (entrada != null)
             {
@@ -108,9 +108,9 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
 
             if (IdnumericUpDown.Value == 0)
-                paso = BLL.Entrada_ArticuloBLL.Guardar(LlenarClase());
+                paso = BLL.EntradaArticuloBLL.Guardar(LlenarClase());
             else
-                paso = BLL.Entrada_ArticuloBLL.Modificar(LlenarClase());
+                paso = BLL.EntradaArticuloBLL.Modificar(LlenarClase());
 
 
             if (paso)
@@ -133,7 +133,7 @@ namespace Segundo_Parcial_Aplicada.IU.Registro
 
             int id = Convert.ToInt32(IdnumericUpDown.Value);
 
-            if (BLL.Entrada_ArticuloBLL.Eliminar(id))
+            if (BLL.EntradaArticuloBLL.Eliminar(id))
                 MessageBox.Show("Eliminado", "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se puede eliminar", "Hay Problemas", MessageBoxButtons.OK, MessageBoxIcon.Error);
